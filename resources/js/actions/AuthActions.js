@@ -3,7 +3,9 @@ import {
     USER_LOGIN_FAIL,
     USER_LOGIN_REQUEST,
     USER_LOGIN_SUCCESS,
-    USER_LOGOUT
+    USER_LOGOUT,
+    TIME_SUCCESS,
+    TIME_RESET
    } from '../constants/AuthConstants'
    
    
@@ -37,9 +39,15 @@ export const loginUser = (user) => async (dispatch) => {
     try {
 
         dispatch({ type: USER_LOGIN_REQUEST });
+        dispatch({ type: TIME_RESET });
         
 
-        const { data } = await axios.post("/login", user);    
+        const { data } = await axios.post("/login", user);   
+        
+        
+        dispatch({type: TIME_SUCCESS,
+            payload: { tst: data.tst, overtime :data.overtime}
+        })
         
 
         const loggedUser = await axios.get("/auth/profile");
@@ -113,12 +121,17 @@ export const registerUser = (user) => async (dispatch) => {
 
 export const refreshUser = () =>   async (dispatch) => {
   
-
+    dispatch({ type: TIME_RESET });
 
     axios.get("/auth/refresh-token")
         .then((res) => {
 
             if(res.status == 200){
+
+                dispatch({type: TIME_SUCCESS,
+                    payload: { tst: res.data.tst, overtime: res.data.overtime}
+                })
+
                 axios.get("/auth/profile").then((response) => {
                     dispatch({ type: USER_LOGIN_SUCCESS, payload: response.data });
                 });

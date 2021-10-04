@@ -12,6 +12,2470 @@ module.exports = __webpack_require__(/*! regenerator-runtime */ "./node_modules/
 
 /***/ }),
 
+/***/ "./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js":
+/*!***********************************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js ***!
+  \***********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "arrayLikeToArray": () => (/* binding */ _arrayLikeToArray),
+/* harmony export */   "createForOfIteratorHelperLoose": () => (/* binding */ _createForOfIteratorHelperLoose),
+/* harmony export */   "extends": () => (/* binding */ _extends),
+/* harmony export */   "objectWithoutPropertiesLoose": () => (/* binding */ _objectWithoutPropertiesLoose),
+/* harmony export */   "unsupportedIterableToArray": () => (/* binding */ _unsupportedIterableToArray)
+/* harmony export */ });
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
+
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
+
+    return target;
+  };
+
+  return _extends.apply(this, arguments);
+}
+
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
+
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return _arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen);
+}
+
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+
+  for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i];
+
+  return arr2;
+}
+
+function _createForOfIteratorHelperLoose(o, allowArrayLike) {
+  var it;
+
+  if (typeof Symbol === "undefined" || o[Symbol.iterator] == null) {
+    if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {
+      if (it) o = it;
+      var i = 0;
+      return function () {
+        if (i >= o.length) return {
+          done: true
+        };
+        return {
+          done: false,
+          value: o[i++]
+        };
+      };
+    }
+
+    throw new TypeError("Invalid attempt to iterate non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+  }
+
+  it = o[Symbol.iterator]();
+  return it.next.bind(it);
+}
+
+
+//# sourceMappingURL=_rollupPluginBabelHelpers.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/components/description/description.esm.js":
+/*!***************************************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/components/description/description.esm.js ***!
+  \***************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Description": () => (/* binding */ Description),
+/* harmony export */   "useDescriptions": () => (/* binding */ useDescriptions)
+/* harmony export */ });
+/* harmony import */ var _virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../_virtual/_rollupPluginBabelHelpers.js */ "./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../utils/render.esm.js */ "./node_modules/@headlessui/react/dist/utils/render.esm.js");
+/* harmony import */ var _hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../hooks/use-iso-morphic-effect.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-iso-morphic-effect.esm.js");
+/* harmony import */ var _hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../hooks/use-id.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-id.esm.js");
+
+
+
+
+
+
+var DescriptionContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
+
+function useDescriptionContext() {
+  var context = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(DescriptionContext);
+
+  if (context === null) {
+    var err = new Error('You used a <Description /> component, but it is not inside a relevant parent.');
+    if (Error.captureStackTrace) Error.captureStackTrace(err, useDescriptionContext);
+    throw err;
+  }
+
+  return context;
+}
+
+function useDescriptions() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)([]),
+      descriptionIds = _useState[0],
+      setDescriptionIds = _useState[1];
+
+  return [// The actual id's as string or undefined
+  descriptionIds.length > 0 ? descriptionIds.join(' ') : undefined, // The provider component
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+    return function DescriptionProvider(props) {
+      var register = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
+        setDescriptionIds(function (existing) {
+          return [].concat(existing, [value]);
+        });
+        return function () {
+          return setDescriptionIds(function (existing) {
+            var clone = existing.slice();
+            var idx = clone.indexOf(value);
+            if (idx !== -1) clone.splice(idx, 1);
+            return clone;
+          });
+        };
+      }, []);
+      var contextBag = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+        return {
+          register: register,
+          slot: props.slot,
+          name: props.name,
+          props: props.props
+        };
+      }, [register, props.slot, props.name, props.props]);
+      return react__WEBPACK_IMPORTED_MODULE_0__.createElement(DescriptionContext.Provider, {
+        value: contextBag
+      }, props.children);
+    };
+  }, [setDescriptionIds])];
+} // ---
+
+var DEFAULT_DESCRIPTION_TAG = 'p';
+function Description(props) {
+  var context = useDescriptionContext();
+  var id = "headlessui-description-" + (0,_hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_1__.useId)();
+  (0,_hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_2__.useIsoMorphicEffect)(function () {
+    return context.register(id);
+  }, [id, context.register]);
+  var passThroughProps = props;
+
+  var propsWeControl = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_3__["extends"])({}, context.props, {
+    id: id
+  });
+
+  return (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_4__.render)({
+    props: (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_3__["extends"])({}, passThroughProps, propsWeControl),
+    slot: context.slot || {},
+    defaultTag: DEFAULT_DESCRIPTION_TAG,
+    name: context.name || 'Description'
+  });
+}
+
+
+//# sourceMappingURL=description.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/components/dialog/dialog.esm.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/components/dialog/dialog.esm.js ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Dialog": () => (/* binding */ Dialog)
+/* harmony export */ });
+/* harmony import */ var _virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../_virtual/_rollupPluginBabelHelpers.js */ "./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _utils_match_esm_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/match.esm.js */ "./node_modules/@headlessui/react/dist/utils/match.esm.js");
+/* harmony import */ var _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils/render.esm.js */ "./node_modules/@headlessui/react/dist/utils/render.esm.js");
+/* harmony import */ var _hooks_use_sync_refs_esm_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../hooks/use-sync-refs.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-sync-refs.esm.js");
+/* harmony import */ var _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../keyboard.esm.js */ "./node_modules/@headlessui/react/dist/components/keyboard.esm.js");
+/* harmony import */ var _utils_bugs_esm_js__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ../../utils/bugs.esm.js */ "./node_modules/@headlessui/react/dist/utils/bugs.esm.js");
+/* harmony import */ var _hooks_use_server_handoff_complete_esm_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../hooks/use-server-handoff-complete.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-server-handoff-complete.esm.js");
+/* harmony import */ var _hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../../hooks/use-id.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-id.esm.js");
+/* harmony import */ var _hooks_use_window_event_esm_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../hooks/use-window-event.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-window-event.esm.js");
+/* harmony import */ var _hooks_use_focus_trap_esm_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../hooks/use-focus-trap.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-focus-trap.esm.js");
+/* harmony import */ var _hooks_use_inert_others_esm_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../hooks/use-inert-others.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-inert-others.esm.js");
+/* harmony import */ var _internal_portal_force_root_esm_js__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../../internal/portal-force-root.esm.js */ "./node_modules/@headlessui/react/dist/internal/portal-force-root.esm.js");
+/* harmony import */ var _portal_portal_esm_js__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../portal/portal.esm.js */ "./node_modules/@headlessui/react/dist/components/portal/portal.esm.js");
+/* harmony import */ var _description_description_esm_js__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../description/description.esm.js */ "./node_modules/@headlessui/react/dist/components/description/description.esm.js");
+/* harmony import */ var _internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../internal/open-closed.esm.js */ "./node_modules/@headlessui/react/dist/internal/open-closed.esm.js");
+/* harmony import */ var _internal_stack_context_esm_js__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../../internal/stack-context.esm.js */ "./node_modules/@headlessui/react/dist/internal/stack-context.esm.js");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var _reducers;
+var DialogStates;
+
+(function (DialogStates) {
+  DialogStates[DialogStates["Open"] = 0] = "Open";
+  DialogStates[DialogStates["Closed"] = 1] = "Closed";
+})(DialogStates || (DialogStates = {}));
+
+var ActionTypes;
+
+(function (ActionTypes) {
+  ActionTypes[ActionTypes["SetTitleId"] = 0] = "SetTitleId";
+})(ActionTypes || (ActionTypes = {}));
+
+var reducers = (_reducers = {}, _reducers[ActionTypes.SetTitleId] = function (state, action) {
+  if (state.titleId === action.id) return state;
+  return (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, state, {
+    titleId: action.id
+  });
+}, _reducers);
+var DialogContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
+DialogContext.displayName = 'DialogContext';
+
+function useDialogContext(component) {
+  var context = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(DialogContext);
+
+  if (context === null) {
+    var err = new Error("<" + component + " /> is missing a parent <" + Dialog.displayName + " /> component.");
+    if (Error.captureStackTrace) Error.captureStackTrace(err, useDialogContext);
+    throw err;
+  }
+
+  return context;
+}
+
+function stateReducer(state, action) {
+  return (0,_utils_match_esm_js__WEBPACK_IMPORTED_MODULE_2__.match)(action.type, reducers, state, action);
+} // ---
+
+
+var DEFAULT_DIALOG_TAG = 'div';
+var DialogRenderFeatures = _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_3__.Features.RenderStrategy | _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_3__.Features.Static;
+var DialogRoot = /*#__PURE__*/(0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_3__.forwardRefWithAs)(function Dialog(props, ref) {
+  var open = props.open,
+      onClose = props.onClose,
+      initialFocus = props.initialFocus,
+      rest = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.objectWithoutPropertiesLoose)(props, ["open", "onClose", "initialFocus"]);
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+      nestedDialogCount = _useState[0],
+      setNestedDialogCount = _useState[1];
+
+  var usesOpenClosedState = (0,_internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_4__.useOpenClosed)();
+
+  if (open === undefined && usesOpenClosedState !== null) {
+    var _match;
+
+    // Update the `open` prop based on the open closed state
+    open = (0,_utils_match_esm_js__WEBPACK_IMPORTED_MODULE_2__.match)(usesOpenClosedState, (_match = {}, _match[_internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_4__.State.Open] = true, _match[_internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_4__.State.Closed] = false, _match));
+  }
+
+  var containers = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(new Set());
+  var internalDialogRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  var dialogRef = (0,_hooks_use_sync_refs_esm_js__WEBPACK_IMPORTED_MODULE_5__.useSyncRefs)(internalDialogRef, ref); // Validations
+
+  var hasOpen = props.hasOwnProperty('open') || usesOpenClosedState !== null;
+  var hasOnClose = props.hasOwnProperty('onClose');
+
+  if (!hasOpen && !hasOnClose) {
+    throw new Error("You have to provide an `open` and an `onClose` prop to the `Dialog` component.");
+  }
+
+  if (!hasOpen) {
+    throw new Error("You provided an `onClose` prop to the `Dialog`, but forgot an `open` prop.");
+  }
+
+  if (!hasOnClose) {
+    throw new Error("You provided an `open` prop to the `Dialog`, but forgot an `onClose` prop.");
+  }
+
+  if (typeof open !== 'boolean') {
+    throw new Error("You provided an `open` prop to the `Dialog`, but the value is not a boolean. Received: " + open);
+  }
+
+  if (typeof onClose !== 'function') {
+    throw new Error("You provided an `onClose` prop to the `Dialog`, but the value is not a function. Received: " + onClose);
+  }
+
+  var dialogState = open ? DialogStates.Open : DialogStates.Closed;
+
+  var visible = function () {
+    if (usesOpenClosedState !== null) {
+      return usesOpenClosedState === _internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_4__.State.Open;
+    }
+
+    return dialogState === DialogStates.Open;
+  }();
+
+  var _useReducer = (0,react__WEBPACK_IMPORTED_MODULE_0__.useReducer)(stateReducer, {
+    titleId: null,
+    descriptionId: null
+  }),
+      state = _useReducer[0],
+      dispatch = _useReducer[1];
+
+  var close = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function () {
+    return onClose(false);
+  }, [onClose]);
+  var setTitleId = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (id) {
+    return dispatch({
+      type: ActionTypes.SetTitleId,
+      id: id
+    });
+  }, [dispatch]);
+  var ready = (0,_hooks_use_server_handoff_complete_esm_js__WEBPACK_IMPORTED_MODULE_6__.useServerHandoffComplete)();
+  var enabled = ready && dialogState === DialogStates.Open;
+  var hasNestedDialogs = nestedDialogCount > 1; // 1 is the current dialog
+
+  var hasParentDialog = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(DialogContext) !== null; // If there are multiple dialogs, then you can be the root, the leaf or one
+  // in between. We only care abou whether you are the top most one or not.
+
+  var position = !hasNestedDialogs ? 'leaf' : 'parent';
+  (0,_hooks_use_focus_trap_esm_js__WEBPACK_IMPORTED_MODULE_7__.useFocusTrap)(internalDialogRef, enabled ? (0,_utils_match_esm_js__WEBPACK_IMPORTED_MODULE_2__.match)(position, {
+    parent: _hooks_use_focus_trap_esm_js__WEBPACK_IMPORTED_MODULE_7__.Features.RestoreFocus,
+    leaf: _hooks_use_focus_trap_esm_js__WEBPACK_IMPORTED_MODULE_7__.Features.All
+  }) : _hooks_use_focus_trap_esm_js__WEBPACK_IMPORTED_MODULE_7__.Features.None, {
+    initialFocus: initialFocus,
+    containers: containers
+  });
+  (0,_hooks_use_inert_others_esm_js__WEBPACK_IMPORTED_MODULE_8__.useInertOthers)(internalDialogRef, hasNestedDialogs ? enabled : false); // Handle outside click
+
+  (0,_hooks_use_window_event_esm_js__WEBPACK_IMPORTED_MODULE_9__.useWindowEvent)('mousedown', function (event) {
+    var _internalDialogRef$cu;
+
+    var target = event.target;
+    if (dialogState !== DialogStates.Open) return;
+    if (hasNestedDialogs) return;
+    if ((_internalDialogRef$cu = internalDialogRef.current) == null ? void 0 : _internalDialogRef$cu.contains(target)) return;
+    close();
+  }); // Handle `Escape` to close
+
+  (0,_hooks_use_window_event_esm_js__WEBPACK_IMPORTED_MODULE_9__.useWindowEvent)('keydown', function (event) {
+    if (event.key !== _keyboard_esm_js__WEBPACK_IMPORTED_MODULE_10__.Keys.Escape) return;
+    if (dialogState !== DialogStates.Open) return;
+    if (hasNestedDialogs) return;
+    event.preventDefault();
+    event.stopPropagation();
+    close();
+  }); // Scroll lock
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (dialogState !== DialogStates.Open) return;
+    if (hasParentDialog) return;
+    var overflow = document.documentElement.style.overflow;
+    var paddingRight = document.documentElement.style.paddingRight;
+    var scrollbarWidth = window.innerWidth - document.documentElement.clientWidth;
+    document.documentElement.style.overflow = 'hidden';
+    document.documentElement.style.paddingRight = scrollbarWidth + "px";
+    return function () {
+      document.documentElement.style.overflow = overflow;
+      document.documentElement.style.paddingRight = paddingRight;
+    };
+  }, [dialogState, hasParentDialog]); // Trigger close when the FocusTrap gets hidden
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (dialogState !== DialogStates.Open) return;
+    if (!internalDialogRef.current) return;
+    var observer = new IntersectionObserver(function (entries) {
+      for (var _iterator = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.createForOfIteratorHelperLoose)(entries), _step; !(_step = _iterator()).done;) {
+        var entry = _step.value;
+
+        if (entry.boundingClientRect.x === 0 && entry.boundingClientRect.y === 0 && entry.boundingClientRect.width === 0 && entry.boundingClientRect.height === 0) {
+          close();
+        }
+      }
+    });
+    observer.observe(internalDialogRef.current);
+    return function () {
+      return observer.disconnect();
+    };
+  }, [dialogState, internalDialogRef, close]);
+
+  var _useDescriptions = (0,_description_description_esm_js__WEBPACK_IMPORTED_MODULE_11__.useDescriptions)(),
+      describedby = _useDescriptions[0],
+      DescriptionProvider = _useDescriptions[1];
+
+  var id = "headlessui-dialog-" + (0,_hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_12__.useId)();
+  var contextBag = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+    return [{
+      dialogState: dialogState,
+      close: close,
+      setTitleId: setTitleId
+    }, state];
+  }, [dialogState, state, close, setTitleId]);
+  var slot = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+    return {
+      open: dialogState === DialogStates.Open
+    };
+  }, [dialogState]);
+  var propsWeControl = {
+    ref: dialogRef,
+    id: id,
+    role: 'dialog',
+    'aria-modal': dialogState === DialogStates.Open ? true : undefined,
+    'aria-labelledby': state.titleId,
+    'aria-describedby': describedby,
+    onClick: function onClick(event) {
+      event.stopPropagation();
+    }
+  };
+  var passthroughProps = rest;
+  return react__WEBPACK_IMPORTED_MODULE_0__.createElement(_internal_stack_context_esm_js__WEBPACK_IMPORTED_MODULE_13__.StackProvider, {
+    type: "Dialog",
+    element: internalDialogRef,
+    onUpdate: (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (message, type, element) {
+      var _match2;
+
+      if (type !== 'Dialog') return;
+      (0,_utils_match_esm_js__WEBPACK_IMPORTED_MODULE_2__.match)(message, (_match2 = {}, _match2[_internal_stack_context_esm_js__WEBPACK_IMPORTED_MODULE_13__.StackMessage.Add] = function () {
+        containers.current.add(element);
+        setNestedDialogCount(function (count) {
+          return count + 1;
+        });
+      }, _match2[_internal_stack_context_esm_js__WEBPACK_IMPORTED_MODULE_13__.StackMessage.Remove] = function () {
+        containers.current.add(element);
+        setNestedDialogCount(function (count) {
+          return count - 1;
+        });
+      }, _match2));
+    }, [])
+  }, react__WEBPACK_IMPORTED_MODULE_0__.createElement(_internal_portal_force_root_esm_js__WEBPACK_IMPORTED_MODULE_14__.ForcePortalRoot, {
+    force: true
+  }, react__WEBPACK_IMPORTED_MODULE_0__.createElement(_portal_portal_esm_js__WEBPACK_IMPORTED_MODULE_15__.Portal, null, react__WEBPACK_IMPORTED_MODULE_0__.createElement(DialogContext.Provider, {
+    value: contextBag
+  }, react__WEBPACK_IMPORTED_MODULE_0__.createElement(_portal_portal_esm_js__WEBPACK_IMPORTED_MODULE_15__.Portal.Group, {
+    target: internalDialogRef
+  }, react__WEBPACK_IMPORTED_MODULE_0__.createElement(_internal_portal_force_root_esm_js__WEBPACK_IMPORTED_MODULE_14__.ForcePortalRoot, {
+    force: false
+  }, react__WEBPACK_IMPORTED_MODULE_0__.createElement(DescriptionProvider, {
+    slot: slot,
+    name: "Dialog.Description"
+  }, (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_3__.render)({
+    props: (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, passthroughProps, propsWeControl),
+    slot: slot,
+    defaultTag: DEFAULT_DIALOG_TAG,
+    features: DialogRenderFeatures,
+    visible: visible,
+    name: 'Dialog'
+  }))))))));
+}); // ---
+
+var DEFAULT_OVERLAY_TAG = 'div';
+var Overlay = /*#__PURE__*/(0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_3__.forwardRefWithAs)(function Overlay(props, ref) {
+  var _useDialogContext = useDialogContext([Dialog.displayName, Overlay.name].join('.')),
+      _useDialogContext$ = _useDialogContext[0],
+      dialogState = _useDialogContext$.dialogState,
+      close = _useDialogContext$.close;
+
+  var overlayRef = (0,_hooks_use_sync_refs_esm_js__WEBPACK_IMPORTED_MODULE_5__.useSyncRefs)(ref);
+  var id = "headlessui-dialog-overlay-" + (0,_hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_12__.useId)();
+  var handleClick = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (event) {
+    if ((0,_utils_bugs_esm_js__WEBPACK_IMPORTED_MODULE_16__.isDisabledReactIssue7711)(event.currentTarget)) return event.preventDefault();
+    event.preventDefault();
+    event.stopPropagation();
+    close();
+  }, [close]);
+  var slot = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+    return {
+      open: dialogState === DialogStates.Open
+    };
+  }, [dialogState]);
+  var propsWeControl = {
+    ref: overlayRef,
+    id: id,
+    'aria-hidden': true,
+    onClick: handleClick
+  };
+  var passthroughProps = props;
+  return (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_3__.render)({
+    props: (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, passthroughProps, propsWeControl),
+    slot: slot,
+    defaultTag: DEFAULT_OVERLAY_TAG,
+    name: 'Dialog.Overlay'
+  });
+}); // ---
+
+var DEFAULT_TITLE_TAG = 'h2';
+
+function Title(props) {
+  var _useDialogContext2 = useDialogContext([Dialog.displayName, Title.name].join('.')),
+      _useDialogContext2$ = _useDialogContext2[0],
+      dialogState = _useDialogContext2$.dialogState,
+      setTitleId = _useDialogContext2$.setTitleId;
+
+  var id = "headlessui-dialog-title-" + (0,_hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_12__.useId)();
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    setTitleId(id);
+    return function () {
+      return setTitleId(null);
+    };
+  }, [id, setTitleId]);
+  var slot = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+    return {
+      open: dialogState === DialogStates.Open
+    };
+  }, [dialogState]);
+  var propsWeControl = {
+    id: id
+  };
+  var passthroughProps = props;
+  return (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_3__.render)({
+    props: (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, passthroughProps, propsWeControl),
+    slot: slot,
+    defaultTag: DEFAULT_TITLE_TAG,
+    name: 'Dialog.Title'
+  });
+} // ---
+
+
+var Dialog = /*#__PURE__*/Object.assign(DialogRoot, {
+  Overlay: Overlay,
+  Title: Title,
+  Description: _description_description_esm_js__WEBPACK_IMPORTED_MODULE_11__.Description
+});
+
+
+//# sourceMappingURL=dialog.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/components/keyboard.esm.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/components/keyboard.esm.js ***!
+  \************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Keys": () => (/* binding */ Keys)
+/* harmony export */ });
+// TODO: This must already exist somewhere, right? 🤔
+// Ref: https://www.w3.org/TR/uievents-key/#named-key-attribute-values
+var Keys;
+
+(function (Keys) {
+  Keys["Space"] = " ";
+  Keys["Enter"] = "Enter";
+  Keys["Escape"] = "Escape";
+  Keys["Backspace"] = "Backspace";
+  Keys["ArrowLeft"] = "ArrowLeft";
+  Keys["ArrowUp"] = "ArrowUp";
+  Keys["ArrowRight"] = "ArrowRight";
+  Keys["ArrowDown"] = "ArrowDown";
+  Keys["Home"] = "Home";
+  Keys["End"] = "End";
+  Keys["PageUp"] = "PageUp";
+  Keys["PageDown"] = "PageDown";
+  Keys["Tab"] = "Tab";
+})(Keys || (Keys = {}));
+
+
+//# sourceMappingURL=keyboard.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/components/portal/portal.esm.js":
+/*!*****************************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/components/portal/portal.esm.js ***!
+  \*****************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Portal": () => (/* binding */ Portal)
+/* harmony export */ });
+/* harmony import */ var _virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../_virtual/_rollupPluginBabelHelpers.js */ "./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../utils/render.esm.js */ "./node_modules/@headlessui/react/dist/utils/render.esm.js");
+/* harmony import */ var _hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../hooks/use-iso-morphic-effect.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-iso-morphic-effect.esm.js");
+/* harmony import */ var _hooks_use_server_handoff_complete_esm_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../hooks/use-server-handoff-complete.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-server-handoff-complete.esm.js");
+/* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
+/* harmony import */ var _internal_portal_force_root_esm_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../internal/portal-force-root.esm.js */ "./node_modules/@headlessui/react/dist/internal/portal-force-root.esm.js");
+
+
+
+
+
+
+
+
+function usePortalTarget() {
+  var forceInRoot = (0,_internal_portal_force_root_esm_js__WEBPACK_IMPORTED_MODULE_2__.usePortalRoot)();
+  var groupTarget = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(PortalGroupContext);
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(function () {
+    // Group context is used, but still null
+    if (!forceInRoot && groupTarget !== null) return null; // No group context is used, let's create a default portal root
+
+    if (typeof window === 'undefined') return null;
+    var existingRoot = document.getElementById('headlessui-portal-root');
+    if (existingRoot) return existingRoot;
+    var root = document.createElement('div');
+    root.setAttribute('id', 'headlessui-portal-root');
+    return document.body.appendChild(root);
+  }),
+      target = _useState[0],
+      setTarget = _useState[1];
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (forceInRoot) return;
+    if (groupTarget === null) return;
+    setTarget(groupTarget.current);
+  }, [groupTarget, setTarget, forceInRoot]);
+  return target;
+} // ---
+
+
+var DEFAULT_PORTAL_TAG = react__WEBPACK_IMPORTED_MODULE_0__.Fragment;
+function Portal(props) {
+  var passthroughProps = props;
+  var target = usePortalTarget();
+
+  var _useState2 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(function () {
+    return typeof window === 'undefined' ? null : document.createElement('div');
+  }),
+      element = _useState2[0];
+
+  var ready = (0,_hooks_use_server_handoff_complete_esm_js__WEBPACK_IMPORTED_MODULE_3__.useServerHandoffComplete)();
+  (0,_hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_4__.useIsoMorphicEffect)(function () {
+    if (!target) return;
+    if (!element) return;
+    target.appendChild(element);
+    return function () {
+      if (!target) return;
+      if (!element) return;
+      target.removeChild(element);
+
+      if (target.childNodes.length <= 0) {
+        var _target$parentElement;
+
+        (_target$parentElement = target.parentElement) == null ? void 0 : _target$parentElement.removeChild(target);
+      }
+    };
+  }, [target, element]);
+  if (!ready) return null;
+  return !target || !element ? null : (0,react_dom__WEBPACK_IMPORTED_MODULE_1__.createPortal)((0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_5__.render)({
+    props: passthroughProps,
+    defaultTag: DEFAULT_PORTAL_TAG,
+    name: 'Portal'
+  }), element);
+} // ---
+
+var DEFAULT_GROUP_TAG = react__WEBPACK_IMPORTED_MODULE_0__.Fragment;
+var PortalGroupContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
+
+function Group(props) {
+  var target = props.target,
+      passthroughProps = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_6__.objectWithoutPropertiesLoose)(props, ["target"]);
+
+  return react__WEBPACK_IMPORTED_MODULE_0__.createElement(PortalGroupContext.Provider, {
+    value: target
+  }, (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_5__.render)({
+    props: passthroughProps,
+    defaultTag: DEFAULT_GROUP_TAG,
+    name: 'Popover.Group'
+  }));
+} // ---
+
+
+Portal.Group = Group;
+
+
+//# sourceMappingURL=portal.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/components/transitions/transition.esm.js":
+/*!**************************************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/components/transitions/transition.esm.js ***!
+  \**************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Transition": () => (/* binding */ Transition)
+/* harmony export */ });
+/* harmony import */ var _virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../../_virtual/_rollupPluginBabelHelpers.js */ "./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _utils_match_esm_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../../utils/match.esm.js */ "./node_modules/@headlessui/react/dist/utils/match.esm.js");
+/* harmony import */ var _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../utils/render.esm.js */ "./node_modules/@headlessui/react/dist/utils/render.esm.js");
+/* harmony import */ var _hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../hooks/use-iso-morphic-effect.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-iso-morphic-effect.esm.js");
+/* harmony import */ var _hooks_use_server_handoff_complete_esm_js__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../hooks/use-server-handoff-complete.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-server-handoff-complete.esm.js");
+/* harmony import */ var _hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../../hooks/use-id.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-id.esm.js");
+/* harmony import */ var _hooks_use_is_mounted_esm_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../hooks/use-is-mounted.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-is-mounted.esm.js");
+/* harmony import */ var _internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../internal/open-closed.esm.js */ "./node_modules/@headlessui/react/dist/internal/open-closed.esm.js");
+/* harmony import */ var _hooks_use_is_initial_render_esm_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../hooks/use-is-initial-render.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-is-initial-render.esm.js");
+/* harmony import */ var _utils_transition_esm_js__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./utils/transition.esm.js */ "./node_modules/@headlessui/react/dist/components/transitions/utils/transition.esm.js");
+
+
+
+
+
+
+
+
+
+
+
+
+function useSplitClasses(classes) {
+  if (classes === void 0) {
+    classes = '';
+  }
+
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+    return classes.split(' ').filter(function (className) {
+      return className.trim().length > 1;
+    });
+  }, [classes]);
+}
+
+var TransitionContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
+TransitionContext.displayName = 'TransitionContext';
+var TreeStates;
+
+(function (TreeStates) {
+  TreeStates["Visible"] = "visible";
+  TreeStates["Hidden"] = "hidden";
+})(TreeStates || (TreeStates = {}));
+
+function useTransitionContext() {
+  var context = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(TransitionContext);
+
+  if (context === null) {
+    throw new Error('A <Transition.Child /> is used but it is missing a parent <Transition /> or <Transition.Root />.');
+  }
+
+  return context;
+}
+
+function useParentNesting() {
+  var context = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(NestingContext);
+
+  if (context === null) {
+    throw new Error('A <Transition.Child /> is used but it is missing a parent <Transition /> or <Transition.Root />.');
+  }
+
+  return context;
+}
+
+var NestingContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
+NestingContext.displayName = 'NestingContext';
+
+function hasChildren(bag) {
+  if ('children' in bag) return hasChildren(bag.children);
+  return bag.current.filter(function (_ref) {
+    var state = _ref.state;
+    return state === TreeStates.Visible;
+  }).length > 0;
+}
+
+function useNesting(done) {
+  var doneRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(done);
+  var transitionableChildren = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)([]);
+  var mounted = (0,_hooks_use_is_mounted_esm_js__WEBPACK_IMPORTED_MODULE_1__.useIsMounted)();
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    doneRef.current = done;
+  }, [done]);
+  var unregister = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (childId, strategy) {
+    var _match;
+
+    if (strategy === void 0) {
+      strategy = _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_2__.RenderStrategy.Hidden;
+    }
+
+    var idx = transitionableChildren.current.findIndex(function (_ref2) {
+      var id = _ref2.id;
+      return id === childId;
+    });
+    if (idx === -1) return;
+    (0,_utils_match_esm_js__WEBPACK_IMPORTED_MODULE_3__.match)(strategy, (_match = {}, _match[_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_2__.RenderStrategy.Unmount] = function () {
+      transitionableChildren.current.splice(idx, 1);
+    }, _match[_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_2__.RenderStrategy.Hidden] = function () {
+      transitionableChildren.current[idx].state = TreeStates.Hidden;
+    }, _match));
+
+    if (!hasChildren(transitionableChildren) && mounted.current) {
+      doneRef.current == null ? void 0 : doneRef.current();
+    }
+  }, [doneRef, mounted, transitionableChildren]);
+  var register = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (childId) {
+    var child = transitionableChildren.current.find(function (_ref3) {
+      var id = _ref3.id;
+      return id === childId;
+    });
+
+    if (!child) {
+      transitionableChildren.current.push({
+        id: childId,
+        state: TreeStates.Visible
+      });
+    } else if (child.state !== TreeStates.Visible) {
+      child.state = TreeStates.Visible;
+    }
+
+    return function () {
+      return unregister(childId, _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_2__.RenderStrategy.Unmount);
+    };
+  }, [transitionableChildren, unregister]);
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+    return {
+      children: transitionableChildren,
+      register: register,
+      unregister: unregister
+    };
+  }, [register, unregister, transitionableChildren]);
+}
+
+function noop() {}
+
+var eventNames = ['beforeEnter', 'afterEnter', 'beforeLeave', 'afterLeave'];
+
+function ensureEventHooksExist(events) {
+  var result = {};
+
+  for (var _iterator = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_4__.createForOfIteratorHelperLoose)(eventNames), _step; !(_step = _iterator()).done;) {
+    var _events$name;
+
+    var name = _step.value;
+    result[name] = (_events$name = events[name]) != null ? _events$name : noop;
+  }
+
+  return result;
+}
+
+function useEvents(events) {
+  var eventsRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(ensureEventHooksExist(events));
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    eventsRef.current = ensureEventHooksExist(events);
+  }, [events]);
+  return eventsRef;
+} // ---
+
+
+var DEFAULT_TRANSITION_CHILD_TAG = 'div';
+var TransitionChildRenderFeatures = _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_2__.Features.RenderStrategy;
+
+function TransitionChild(props) {
+  var _match3;
+
+  var beforeEnter = props.beforeEnter,
+      afterEnter = props.afterEnter,
+      beforeLeave = props.beforeLeave,
+      afterLeave = props.afterLeave,
+      enter = props.enter,
+      enterFrom = props.enterFrom,
+      enterTo = props.enterTo,
+      entered = props.entered,
+      leave = props.leave,
+      leaveFrom = props.leaveFrom,
+      leaveTo = props.leaveTo,
+      rest = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_4__.objectWithoutPropertiesLoose)(props, ["beforeEnter", "afterEnter", "beforeLeave", "afterLeave", "enter", "enterFrom", "enterTo", "entered", "leave", "leaveFrom", "leaveTo"]);
+
+  var container = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(TreeStates.Visible),
+      state = _useState[0],
+      setState = _useState[1];
+
+  var strategy = rest.unmount ? _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_2__.RenderStrategy.Unmount : _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_2__.RenderStrategy.Hidden;
+
+  var _useTransitionContext = useTransitionContext(),
+      show = _useTransitionContext.show,
+      appear = _useTransitionContext.appear;
+
+  var _useParentNesting = useParentNesting(),
+      register = _useParentNesting.register,
+      unregister = _useParentNesting.unregister;
+
+  var initial = (0,_hooks_use_is_initial_render_esm_js__WEBPACK_IMPORTED_MODULE_5__.useIsInitialRender)();
+  var id = (0,_hooks_use_id_esm_js__WEBPACK_IMPORTED_MODULE_6__.useId)();
+  var isTransitioning = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(false);
+  var nesting = useNesting(function () {
+    // When all children have been unmounted we can only hide ourselves if and only if we are not
+    // transitioning ourselves. Otherwise we would unmount before the transitions are finished.
+    if (!isTransitioning.current) {
+      setState(TreeStates.Hidden);
+      unregister(id);
+      events.current.afterLeave();
+    }
+  });
+  (0,_hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_7__.useIsoMorphicEffect)(function () {
+    if (!id) return;
+    return register(id);
+  }, [register, id]);
+  (0,_hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_7__.useIsoMorphicEffect)(function () {
+    var _match2;
+
+    // If we are in another mode than the Hidden mode then ignore
+    if (strategy !== _utils_render_esm_js__WEBPACK_IMPORTED_MODULE_2__.RenderStrategy.Hidden) return;
+    if (!id) return; // Make sure that we are visible
+
+    if (show && state !== TreeStates.Visible) {
+      setState(TreeStates.Visible);
+      return;
+    }
+
+    (0,_utils_match_esm_js__WEBPACK_IMPORTED_MODULE_3__.match)(state, (_match2 = {}, _match2[TreeStates.Hidden] = function () {
+      return unregister(id);
+    }, _match2[TreeStates.Visible] = function () {
+      return register(id);
+    }, _match2));
+  }, [state, id, register, unregister, show, strategy]);
+  var enterClasses = useSplitClasses(enter);
+  var enterFromClasses = useSplitClasses(enterFrom);
+  var enterToClasses = useSplitClasses(enterTo);
+  var enteredClasses = useSplitClasses(entered);
+  var leaveClasses = useSplitClasses(leave);
+  var leaveFromClasses = useSplitClasses(leaveFrom);
+  var leaveToClasses = useSplitClasses(leaveTo);
+  var events = useEvents({
+    beforeEnter: beforeEnter,
+    afterEnter: afterEnter,
+    beforeLeave: beforeLeave,
+    afterLeave: afterLeave
+  });
+  var ready = (0,_hooks_use_server_handoff_complete_esm_js__WEBPACK_IMPORTED_MODULE_8__.useServerHandoffComplete)();
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (ready && state === TreeStates.Visible && container.current === null) {
+      throw new Error('Did you forget to passthrough the `ref` to the actual DOM node?');
+    }
+  }, [container, state, ready]); // Skipping initial transition
+
+  var skip = initial && !appear;
+  (0,_hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_7__.useIsoMorphicEffect)(function () {
+    var node = container.current;
+    if (!node) return;
+    if (skip) return;
+    isTransitioning.current = true;
+    if (show) events.current.beforeEnter();
+    if (!show) events.current.beforeLeave();
+    return show ? (0,_utils_transition_esm_js__WEBPACK_IMPORTED_MODULE_9__.transition)(node, enterClasses, enterFromClasses, enterToClasses, enteredClasses, function (reason) {
+      isTransitioning.current = false;
+      if (reason === _utils_transition_esm_js__WEBPACK_IMPORTED_MODULE_9__.Reason.Finished) events.current.afterEnter();
+    }) : (0,_utils_transition_esm_js__WEBPACK_IMPORTED_MODULE_9__.transition)(node, leaveClasses, leaveFromClasses, leaveToClasses, enteredClasses, function (reason) {
+      isTransitioning.current = false;
+      if (reason !== _utils_transition_esm_js__WEBPACK_IMPORTED_MODULE_9__.Reason.Finished) return; // When we don't have children anymore we can safely unregister from the parent and hide
+      // ourselves.
+
+      if (!hasChildren(nesting)) {
+        setState(TreeStates.Hidden);
+        unregister(id);
+        events.current.afterLeave();
+      }
+    });
+  }, [events, id, isTransitioning, unregister, nesting, container, skip, show, enterClasses, enterFromClasses, enterToClasses, leaveClasses, leaveFromClasses, leaveToClasses]);
+  var propsWeControl = {
+    ref: container
+  };
+  var passthroughProps = rest;
+  return react__WEBPACK_IMPORTED_MODULE_0__.createElement(NestingContext.Provider, {
+    value: nesting
+  }, react__WEBPACK_IMPORTED_MODULE_0__.createElement(_internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_10__.OpenClosedProvider, {
+    value: (0,_utils_match_esm_js__WEBPACK_IMPORTED_MODULE_3__.match)(state, (_match3 = {}, _match3[TreeStates.Visible] = _internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_10__.State.Open, _match3[TreeStates.Hidden] = _internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_10__.State.Closed, _match3))
+  }, (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_2__.render)({
+    props: (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_4__["extends"])({}, passthroughProps, propsWeControl),
+    defaultTag: DEFAULT_TRANSITION_CHILD_TAG,
+    features: TransitionChildRenderFeatures,
+    visible: state === TreeStates.Visible,
+    name: 'Transition.Child'
+  })));
+}
+
+function Transition(props) {
+  // @ts-expect-error
+  var show = props.show,
+      _props$appear = props.appear,
+      appear = _props$appear === void 0 ? false : _props$appear,
+      unmount = props.unmount,
+      passthroughProps = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_4__.objectWithoutPropertiesLoose)(props, ["show", "appear", "unmount"]);
+
+  var usesOpenClosedState = (0,_internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_10__.useOpenClosed)();
+
+  if (show === undefined && usesOpenClosedState !== null) {
+    var _match4;
+
+    show = (0,_utils_match_esm_js__WEBPACK_IMPORTED_MODULE_3__.match)(usesOpenClosedState, (_match4 = {}, _match4[_internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_10__.State.Open] = true, _match4[_internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_10__.State.Closed] = false, _match4));
+  }
+
+  if (![true, false].includes(show)) {
+    throw new Error('A <Transition /> is used but it is missing a `show={true | false}` prop.');
+  }
+
+  var _useState2 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(show ? TreeStates.Visible : TreeStates.Hidden),
+      state = _useState2[0],
+      setState = _useState2[1];
+
+  var nestingBag = useNesting(function () {
+    setState(TreeStates.Hidden);
+  });
+  var initial = (0,_hooks_use_is_initial_render_esm_js__WEBPACK_IMPORTED_MODULE_5__.useIsInitialRender)();
+  var transitionBag = (0,react__WEBPACK_IMPORTED_MODULE_0__.useMemo)(function () {
+    return {
+      show: show,
+      appear: appear || !initial
+    };
+  }, [show, appear, initial]);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (show) {
+      setState(TreeStates.Visible);
+    } else if (!hasChildren(nestingBag)) {
+      setState(TreeStates.Hidden);
+    }
+  }, [show, nestingBag]);
+  var sharedProps = {
+    unmount: unmount
+  };
+  return react__WEBPACK_IMPORTED_MODULE_0__.createElement(NestingContext.Provider, {
+    value: nestingBag
+  }, react__WEBPACK_IMPORTED_MODULE_0__.createElement(TransitionContext.Provider, {
+    value: transitionBag
+  }, (0,_utils_render_esm_js__WEBPACK_IMPORTED_MODULE_2__.render)({
+    props: (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_4__["extends"])({}, sharedProps, {
+      as: react__WEBPACK_IMPORTED_MODULE_0__.Fragment,
+      children: react__WEBPACK_IMPORTED_MODULE_0__.createElement(TransitionChild, Object.assign({}, sharedProps, passthroughProps))
+    }),
+    defaultTag: react__WEBPACK_IMPORTED_MODULE_0__.Fragment,
+    features: TransitionChildRenderFeatures,
+    visible: state === TreeStates.Visible,
+    name: 'Transition'
+  })));
+}
+
+Transition.Child = function Child(props) {
+  var hasTransitionContext = (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(TransitionContext) !== null;
+  var hasOpenClosedContext = (0,_internal_open_closed_esm_js__WEBPACK_IMPORTED_MODULE_10__.useOpenClosed)() !== null;
+  return !hasTransitionContext && hasOpenClosedContext ? react__WEBPACK_IMPORTED_MODULE_0__.createElement(Transition, Object.assign({}, props)) : react__WEBPACK_IMPORTED_MODULE_0__.createElement(TransitionChild, Object.assign({}, props));
+};
+
+Transition.Root = Transition;
+
+
+//# sourceMappingURL=transition.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/components/transitions/utils/transition.esm.js":
+/*!********************************************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/components/transitions/utils/transition.esm.js ***!
+  \********************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Reason": () => (/* binding */ Reason),
+/* harmony export */   "transition": () => (/* binding */ transition)
+/* harmony export */ });
+/* harmony import */ var _utils_disposables_esm_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../utils/disposables.esm.js */ "./node_modules/@headlessui/react/dist/utils/disposables.esm.js");
+/* harmony import */ var _utils_once_esm_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../utils/once.esm.js */ "./node_modules/@headlessui/react/dist/utils/once.esm.js");
+
+
+
+function addClasses(node) {
+  var _node$classList;
+
+  for (var _len = arguments.length, classes = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
+    classes[_key - 1] = arguments[_key];
+  }
+
+  node && classes.length > 0 && (_node$classList = node.classList).add.apply(_node$classList, classes);
+}
+
+function removeClasses(node) {
+  var _node$classList2;
+
+  for (var _len2 = arguments.length, classes = new Array(_len2 > 1 ? _len2 - 1 : 0), _key2 = 1; _key2 < _len2; _key2++) {
+    classes[_key2 - 1] = arguments[_key2];
+  }
+
+  node && classes.length > 0 && (_node$classList2 = node.classList).remove.apply(_node$classList2, classes);
+}
+
+var Reason;
+
+(function (Reason) {
+  Reason["Finished"] = "finished";
+  Reason["Cancelled"] = "cancelled";
+})(Reason || (Reason = {}));
+
+function waitForTransition(node, done) {
+  var d = (0,_utils_disposables_esm_js__WEBPACK_IMPORTED_MODULE_0__.disposables)();
+  if (!node) return d.dispose; // Safari returns a comma separated list of values, so let's sort them and take the highest value.
+
+  var _getComputedStyle = getComputedStyle(node),
+      transitionDuration = _getComputedStyle.transitionDuration,
+      transitionDelay = _getComputedStyle.transitionDelay;
+
+  var _map = [transitionDuration, transitionDelay].map(function (value) {
+    var _value$split$filter$m = value.split(',') // Remove falsy we can't work with
+    .filter(Boolean) // Values are returned as `0.3s` or `75ms`
+    .map(function (v) {
+      return v.includes('ms') ? parseFloat(v) : parseFloat(v) * 1000;
+    }).sort(function (a, z) {
+      return z - a;
+    }),
+        _value$split$filter$m2 = _value$split$filter$m[0],
+        resolvedValue = _value$split$filter$m2 === void 0 ? 0 : _value$split$filter$m2;
+
+    return resolvedValue;
+  }),
+      durationMs = _map[0],
+      delaysMs = _map[1]; // Waiting for the transition to end. We could use the `transitionend` event, however when no
+  // actual transition/duration is defined then the `transitionend` event is not fired.
+  //
+  // TODO: Downside is, when you slow down transitions via devtools this timeout is still using the
+  // full 100% speed instead of the 25% or 10%.
+
+
+  if (durationMs !== 0) {
+    d.setTimeout(function () {
+      done(Reason.Finished);
+    }, durationMs + delaysMs);
+  } else {
+    // No transition is happening, so we should cleanup already. Otherwise we have to wait until we
+    // get disposed.
+    done(Reason.Finished);
+  } // If we get disposed before the timeout runs we should cleanup anyway
+
+
+  d.add(function () {
+    return done(Reason.Cancelled);
+  });
+  return d.dispose;
+}
+
+function transition(node, base, from, to, entered, done) {
+  var d = (0,_utils_disposables_esm_js__WEBPACK_IMPORTED_MODULE_0__.disposables)();
+
+  var _done = done !== undefined ? (0,_utils_once_esm_js__WEBPACK_IMPORTED_MODULE_1__.once)(done) : function () {};
+
+  removeClasses.apply(void 0, [node].concat(entered));
+  addClasses.apply(void 0, [node].concat(base, from));
+  d.nextFrame(function () {
+    removeClasses.apply(void 0, [node].concat(from));
+    addClasses.apply(void 0, [node].concat(to));
+    d.add(waitForTransition(node, function (reason) {
+      removeClasses.apply(void 0, [node].concat(to, base));
+      addClasses.apply(void 0, [node].concat(entered));
+      return _done(reason);
+    }));
+  }); // Once we get disposed, we should ensure that we cleanup after ourselves. In case of an unmount,
+  // the node itself will be nullified and will be a no-op. In case of a full transition the classes
+  // are already removed which is also a no-op. However if you go from enter -> leave mid-transition
+  // then we have some leftovers that should be cleaned.
+
+  d.add(function () {
+    return removeClasses.apply(void 0, [node].concat(base, from, to, entered));
+  }); // When we get disposed early, than we should also call the done method but switch the reason.
+
+  d.add(function () {
+    return _done(Reason.Cancelled);
+  });
+  return d.dispose;
+}
+
+
+//# sourceMappingURL=transition.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/hooks/use-focus-trap.esm.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/hooks/use-focus-trap.esm.js ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Features": () => (/* binding */ Features),
+/* harmony export */   "useFocusTrap": () => (/* binding */ useFocusTrap)
+/* harmony export */ });
+/* harmony import */ var _virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../_virtual/_rollupPluginBabelHelpers.js */ "./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _components_keyboard_esm_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/keyboard.esm.js */ "./node_modules/@headlessui/react/dist/components/keyboard.esm.js");
+/* harmony import */ var _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../utils/focus-management.esm.js */ "./node_modules/@headlessui/react/dist/utils/focus-management.esm.js");
+/* harmony import */ var _use_window_event_esm_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./use-window-event.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-window-event.esm.js");
+/* harmony import */ var _use_is_mounted_esm_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./use-is-mounted.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-is-mounted.esm.js");
+
+
+
+
+
+
+
+var Features;
+
+(function (Features) {
+  /** No features enabled for the `useFocusTrap` hook. */
+  Features[Features["None"] = 1] = "None";
+  /** Ensure that we move focus initially into the container. */
+
+  Features[Features["InitialFocus"] = 2] = "InitialFocus";
+  /** Ensure that pressing `Tab` and `Shift+Tab` is trapped within the container. */
+
+  Features[Features["TabLock"] = 4] = "TabLock";
+  /** Ensure that programmatically moving focus outside of the container is disallowed. */
+
+  Features[Features["FocusLock"] = 8] = "FocusLock";
+  /** Ensure that we restore the focus when unmounting the component that uses this `useFocusTrap` hook. */
+
+  Features[Features["RestoreFocus"] = 16] = "RestoreFocus";
+  /** Enable all features. */
+
+  Features[Features["All"] = 30] = "All";
+})(Features || (Features = {}));
+
+function useFocusTrap(container, features, _temp) {
+  if (features === void 0) {
+    features = Features.All;
+  }
+
+  var _ref = _temp === void 0 ? {} : _temp,
+      initialFocus = _ref.initialFocus,
+      containers = _ref.containers;
+
+  var restoreElement = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(typeof window !== 'undefined' ? document.activeElement : null);
+  var previousActiveElement = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(null);
+  var mounted = (0,_use_is_mounted_esm_js__WEBPACK_IMPORTED_MODULE_1__.useIsMounted)();
+  var featuresRestoreFocus = Boolean(features & Features.RestoreFocus);
+  var featuresInitialFocus = Boolean(features & Features.InitialFocus); // Capture the currently focused element, before we enable the focus trap.
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (!featuresRestoreFocus) return;
+    restoreElement.current = document.activeElement;
+  }, [featuresRestoreFocus]); // Restore the focus when we unmount the component.
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (!featuresRestoreFocus) return;
+    return function () {
+      (0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__.focusElement)(restoreElement.current);
+      restoreElement.current = null;
+    };
+  }, [featuresRestoreFocus]); // Handle initial focus
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (!featuresInitialFocus) return;
+    if (!container.current) return;
+    var activeElement = document.activeElement;
+
+    if (initialFocus == null ? void 0 : initialFocus.current) {
+      if ((initialFocus == null ? void 0 : initialFocus.current) === activeElement) {
+        previousActiveElement.current = activeElement;
+        return; // Initial focus ref is already the active element
+      }
+    } else if (container.current.contains(activeElement)) {
+      previousActiveElement.current = activeElement;
+      return; // Already focused within Dialog
+    } // Try to focus the initialFocus ref
+
+
+    if (initialFocus == null ? void 0 : initialFocus.current) {
+      (0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__.focusElement)(initialFocus.current);
+    } else {
+      if ((0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__.focusIn)(container.current, _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__.Focus.First) === _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__.FocusResult.Error) {
+        console.warn('There are no focusable elements inside the <FocusTrap />');
+      }
+    }
+
+    previousActiveElement.current = document.activeElement;
+  }, [container, initialFocus, featuresInitialFocus]); // Handle `Tab` & `Shift+Tab` keyboard events
+
+  (0,_use_window_event_esm_js__WEBPACK_IMPORTED_MODULE_3__.useWindowEvent)('keydown', function (event) {
+    if (!(features & Features.TabLock)) return;
+    if (!container.current) return;
+    if (event.key !== _components_keyboard_esm_js__WEBPACK_IMPORTED_MODULE_4__.Keys.Tab) return;
+    event.preventDefault();
+
+    if ((0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__.focusIn)(container.current, (event.shiftKey ? _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__.Focus.Previous : _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__.Focus.Next) | _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__.Focus.WrapAround) === _utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__.FocusResult.Success) {
+      previousActiveElement.current = document.activeElement;
+    }
+  }); // Prevent programmatically escaping the container
+
+  (0,_use_window_event_esm_js__WEBPACK_IMPORTED_MODULE_3__.useWindowEvent)('focus', function (event) {
+    if (!(features & Features.FocusLock)) return;
+    var allContainers = new Set(containers == null ? void 0 : containers.current);
+    allContainers.add(container);
+    if (!allContainers.size) return;
+    var previous = previousActiveElement.current;
+    if (!previous) return;
+    if (!mounted.current) return;
+    var toElement = event.target;
+
+    if (toElement && toElement instanceof HTMLElement) {
+      if (!contains(allContainers, toElement)) {
+        event.preventDefault();
+        event.stopPropagation();
+        (0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__.focusElement)(previous);
+      } else {
+        previousActiveElement.current = toElement;
+        (0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__.focusElement)(toElement);
+      }
+    } else {
+      (0,_utils_focus_management_esm_js__WEBPACK_IMPORTED_MODULE_2__.focusElement)(previousActiveElement.current);
+    }
+  }, true);
+}
+
+function contains(containers, element) {
+  for (var _iterator = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_5__.createForOfIteratorHelperLoose)(containers), _step; !(_step = _iterator()).done;) {
+    var _container$current;
+
+    var container = _step.value;
+    if ((_container$current = container.current) == null ? void 0 : _container$current.contains(element)) return true;
+  }
+
+  return false;
+}
+
+
+//# sourceMappingURL=use-focus-trap.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/hooks/use-id.esm.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/hooks/use-id.esm.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useId": () => (/* binding */ useId)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./use-iso-morphic-effect.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-iso-morphic-effect.esm.js");
+/* harmony import */ var _use_server_handoff_complete_esm_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./use-server-handoff-complete.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-server-handoff-complete.esm.js");
+
+
+
+
+// didn't take care of the Suspense case. To fix this we used the approach the @reach-ui/auto-id
+// uses.
+//
+// Credits: https://github.com/reach/reach-ui/blob/develop/packages/auto-id/src/index.tsx
+
+var id = 0;
+
+function generateId() {
+  return ++id;
+}
+
+function useId() {
+  var ready = (0,_use_server_handoff_complete_esm_js__WEBPACK_IMPORTED_MODULE_1__.useServerHandoffComplete)();
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(ready ? generateId : null),
+      id = _useState[0],
+      setId = _useState[1];
+
+  (0,_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_2__.useIsoMorphicEffect)(function () {
+    if (id === null) setId(generateId());
+  }, [id]);
+  return id != null ? '' + id : undefined;
+}
+
+
+//# sourceMappingURL=use-id.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/hooks/use-inert-others.esm.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/hooks/use-inert-others.esm.js ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useInertOthers": () => (/* binding */ useInertOthers)
+/* harmony export */ });
+/* harmony import */ var _virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../_virtual/_rollupPluginBabelHelpers.js */ "./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js");
+/* harmony import */ var _use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./use-iso-morphic-effect.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-iso-morphic-effect.esm.js");
+
+
+
+var interactables = /*#__PURE__*/new Set();
+var originals = /*#__PURE__*/new Map();
+
+function inert(element) {
+  element.setAttribute('aria-hidden', 'true'); // @ts-expect-error `inert` does not exist on HTMLElement (yet!)
+
+  element.inert = true;
+}
+
+function restore(element) {
+  var original = originals.get(element);
+  if (!original) return;
+  if (original['aria-hidden'] === null) element.removeAttribute('aria-hidden');else element.setAttribute('aria-hidden', original['aria-hidden']); // @ts-expect-error `inert` does not exist on HTMLElement (yet!)
+
+  element.inert = original.inert;
+}
+
+function useInertOthers(container, enabled) {
+  if (enabled === void 0) {
+    enabled = true;
+  }
+
+  (0,_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_0__.useIsoMorphicEffect)(function () {
+    if (!enabled) return;
+    if (!container.current) return;
+    var element = container.current; // Mark myself as an interactable element
+
+    interactables.add(element); // Restore elements that now contain an interactable child
+
+    for (var _iterator = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.createForOfIteratorHelperLoose)(originals.keys()), _step; !(_step = _iterator()).done;) {
+      var original = _step.value;
+
+      if (original.contains(element)) {
+        restore(original);
+        originals["delete"](original);
+      }
+    } // Collect direct children of the body
+
+
+    document.querySelectorAll('body > *').forEach(function (child) {
+      if (!(child instanceof HTMLElement)) return; // Skip non-HTMLElements
+      // Skip the interactables, and the parents of the interactables
+
+      for (var _iterator2 = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.createForOfIteratorHelperLoose)(interactables), _step2; !(_step2 = _iterator2()).done;) {
+        var interactable = _step2.value;
+        if (child.contains(interactable)) return;
+      } // Keep track of the elements
+
+
+      if (interactables.size === 1) {
+        originals.set(child, {
+          'aria-hidden': child.getAttribute('aria-hidden'),
+          // @ts-expect-error `inert` does not exist on HTMLElement (yet!)
+          inert: child.inert
+        }); // Mutate the element
+
+        inert(child);
+      }
+    });
+    return function () {
+      // Inert is disabled on the current element
+      interactables["delete"](element); // We still have interactable elements, therefore this one and its parent
+      // will become inert as well.
+
+      if (interactables.size > 0) {
+        // Collect direct children of the body
+        document.querySelectorAll('body > *').forEach(function (child) {
+          if (!(child instanceof HTMLElement)) return; // Skip non-HTMLElements
+          // Skip already inert parents
+
+          if (originals.has(child)) return; // Skip the interactables, and the parents of the interactables
+
+          for (var _iterator3 = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.createForOfIteratorHelperLoose)(interactables), _step3; !(_step3 = _iterator3()).done;) {
+            var interactable = _step3.value;
+            if (child.contains(interactable)) return;
+          }
+
+          originals.set(child, {
+            'aria-hidden': child.getAttribute('aria-hidden'),
+            // @ts-expect-error `inert` does not exist on HTMLElement (yet!)
+            inert: child.inert
+          }); // Mutate the element
+
+          inert(child);
+        });
+      } else {
+        for (var _iterator4 = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.createForOfIteratorHelperLoose)(originals.keys()), _step4; !(_step4 = _iterator4()).done;) {
+          var _element = _step4.value;
+          // Restore
+          restore(_element); // Cleanup
+
+          originals["delete"](_element);
+        }
+      }
+    };
+  }, [enabled]);
+}
+
+
+//# sourceMappingURL=use-inert-others.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/hooks/use-is-initial-render.esm.js":
+/*!********************************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/hooks/use-is-initial-render.esm.js ***!
+  \********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useIsInitialRender": () => (/* binding */ useIsInitialRender)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+
+function useIsInitialRender() {
+  var initial = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(true);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    initial.current = false;
+  }, []);
+  return initial.current;
+}
+
+
+//# sourceMappingURL=use-is-initial-render.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/hooks/use-is-mounted.esm.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/hooks/use-is-mounted.esm.js ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useIsMounted": () => (/* binding */ useIsMounted)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+
+function useIsMounted() {
+  var mounted = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(false);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    mounted.current = true;
+    return function () {
+      mounted.current = false;
+    };
+  }, []);
+  return mounted;
+}
+
+
+//# sourceMappingURL=use-is-mounted.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/hooks/use-iso-morphic-effect.esm.js":
+/*!*********************************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/hooks/use-iso-morphic-effect.esm.js ***!
+  \*********************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useIsoMorphicEffect": () => (/* binding */ useIsoMorphicEffect)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+
+var useIsoMorphicEffect = typeof window !== 'undefined' ? react__WEBPACK_IMPORTED_MODULE_0__.useLayoutEffect : react__WEBPACK_IMPORTED_MODULE_0__.useEffect;
+
+
+//# sourceMappingURL=use-iso-morphic-effect.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/hooks/use-server-handoff-complete.esm.js":
+/*!**************************************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/hooks/use-server-handoff-complete.esm.js ***!
+  \**************************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useServerHandoffComplete": () => (/* binding */ useServerHandoffComplete)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+
+var state = {
+  serverHandoffComplete: false
+};
+function useServerHandoffComplete() {
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(state.serverHandoffComplete),
+      serverHandoffComplete = _useState[0],
+      setServerHandoffComplete = _useState[1];
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (serverHandoffComplete === true) return;
+    setServerHandoffComplete(true);
+  }, [serverHandoffComplete]);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (state.serverHandoffComplete === false) state.serverHandoffComplete = true;
+  }, []);
+  return serverHandoffComplete;
+}
+
+
+//# sourceMappingURL=use-server-handoff-complete.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/hooks/use-sync-refs.esm.js":
+/*!************************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/hooks/use-sync-refs.esm.js ***!
+  \************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useSyncRefs": () => (/* binding */ useSyncRefs)
+/* harmony export */ });
+/* harmony import */ var _virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../_virtual/_rollupPluginBabelHelpers.js */ "./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+
+
+function useSyncRefs() {
+  for (var _len = arguments.length, refs = new Array(_len), _key = 0; _key < _len; _key++) {
+    refs[_key] = arguments[_key];
+  }
+
+  var cache = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(refs);
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    cache.current = refs;
+  }, [refs]);
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function (value) {
+    for (var _iterator = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.createForOfIteratorHelperLoose)(cache.current), _step; !(_step = _iterator()).done;) {
+      var ref = _step.value;
+      if (ref == null) continue;
+      if (typeof ref === 'function') ref(value);else ref.current = value;
+    }
+  }, [cache]);
+}
+
+
+//# sourceMappingURL=use-sync-refs.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/hooks/use-window-event.esm.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/hooks/use-window-event.esm.js ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "useWindowEvent": () => (/* binding */ useWindowEvent)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+
+function useWindowEvent(type, listener, options) {
+  var listenerRef = (0,react__WEBPACK_IMPORTED_MODULE_0__.useRef)(listener);
+  listenerRef.current = listener;
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    function handler(event) {
+      listenerRef.current.call(window, event);
+    }
+
+    window.addEventListener(type, handler, options);
+    return function () {
+      return window.removeEventListener(type, handler, options);
+    };
+  }, [type, options]);
+}
+
+
+//# sourceMappingURL=use-window-event.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/internal/open-closed.esm.js":
+/*!*************************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/internal/open-closed.esm.js ***!
+  \*************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "OpenClosedProvider": () => (/* binding */ OpenClosedProvider),
+/* harmony export */   "State": () => (/* binding */ State),
+/* harmony export */   "useOpenClosed": () => (/* binding */ useOpenClosed)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+
+var Context = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(null);
+Context.displayName = 'OpenClosedContext';
+var State;
+
+(function (State) {
+  State[State["Open"] = 0] = "Open";
+  State[State["Closed"] = 1] = "Closed";
+})(State || (State = {}));
+
+function useOpenClosed() {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(Context);
+}
+function OpenClosedProvider(_ref) {
+  var value = _ref.value,
+      children = _ref.children;
+  return react__WEBPACK_IMPORTED_MODULE_0__.createElement(Context.Provider, {
+    value: value
+  }, children);
+}
+
+
+//# sourceMappingURL=open-closed.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/internal/portal-force-root.esm.js":
+/*!*******************************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/internal/portal-force-root.esm.js ***!
+  \*******************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "ForcePortalRoot": () => (/* binding */ ForcePortalRoot),
+/* harmony export */   "usePortalRoot": () => (/* binding */ usePortalRoot)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+
+var ForcePortalRootContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(false);
+function usePortalRoot() {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(ForcePortalRootContext);
+}
+function ForcePortalRoot(props) {
+  return react__WEBPACK_IMPORTED_MODULE_0__.createElement(ForcePortalRootContext.Provider, {
+    value: props.force
+  }, props.children);
+}
+
+
+//# sourceMappingURL=portal-force-root.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/internal/stack-context.esm.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/internal/stack-context.esm.js ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "StackMessage": () => (/* binding */ StackMessage),
+/* harmony export */   "StackProvider": () => (/* binding */ StackProvider),
+/* harmony export */   "useStackContext": () => (/* binding */ useStackContext)
+/* harmony export */ });
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../hooks/use-iso-morphic-effect.esm.js */ "./node_modules/@headlessui/react/dist/hooks/use-iso-morphic-effect.esm.js");
+
+
+
+var StackContext = /*#__PURE__*/(0,react__WEBPACK_IMPORTED_MODULE_0__.createContext)(function () {});
+StackContext.displayName = 'StackContext';
+var StackMessage;
+
+(function (StackMessage) {
+  StackMessage[StackMessage["Add"] = 0] = "Add";
+  StackMessage[StackMessage["Remove"] = 1] = "Remove";
+})(StackMessage || (StackMessage = {}));
+
+function useStackContext() {
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.useContext)(StackContext);
+}
+function StackProvider(_ref) {
+  var children = _ref.children,
+      onUpdate = _ref.onUpdate,
+      type = _ref.type,
+      element = _ref.element;
+  var parentUpdate = useStackContext();
+  var notify = (0,react__WEBPACK_IMPORTED_MODULE_0__.useCallback)(function () {
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    // Notify our layer
+    onUpdate == null ? void 0 : onUpdate.apply(void 0, args); // Notify the parent
+
+    parentUpdate.apply(void 0, args);
+  }, [parentUpdate, onUpdate]);
+  (0,_hooks_use_iso_morphic_effect_esm_js__WEBPACK_IMPORTED_MODULE_1__.useIsoMorphicEffect)(function () {
+    notify(StackMessage.Add, type, element);
+    return function () {
+      return notify(StackMessage.Remove, type, element);
+    };
+  }, [notify, type, element]);
+  return react__WEBPACK_IMPORTED_MODULE_0__.createElement(StackContext.Provider, {
+    value: notify
+  }, children);
+}
+
+
+//# sourceMappingURL=stack-context.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/utils/bugs.esm.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/utils/bugs.esm.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "isDisabledReactIssue7711": () => (/* binding */ isDisabledReactIssue7711)
+/* harmony export */ });
+// See: https://github.com/facebook/react/issues/7711
+// See: https://github.com/facebook/react/pull/20612
+// See: https://html.spec.whatwg.org/multipage/form-control-infrastructure.html#concept-fe-disabled (2.)
+function isDisabledReactIssue7711(element) {
+  var _ref, _parent;
+
+  var parent = element.parentElement;
+  var legend = null;
+
+  while (parent && !(parent instanceof HTMLFieldSetElement)) {
+    if (parent instanceof HTMLLegendElement) legend = parent;
+    parent = parent.parentElement;
+  }
+
+  var isParentDisabled = (_ref = ((_parent = parent) == null ? void 0 : _parent.getAttribute('disabled')) === '') != null ? _ref : false;
+  if (isParentDisabled && isFirstLegend(legend)) return false;
+  return isParentDisabled;
+}
+
+function isFirstLegend(element) {
+  if (!element) return false;
+  var previous = element.previousElementSibling;
+
+  while (previous !== null) {
+    if (previous instanceof HTMLLegendElement) return false;
+    previous = previous.previousElementSibling;
+  }
+
+  return true;
+}
+
+
+//# sourceMappingURL=bugs.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/utils/disposables.esm.js":
+/*!**********************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/utils/disposables.esm.js ***!
+  \**********************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "disposables": () => (/* binding */ disposables)
+/* harmony export */ });
+/* harmony import */ var _virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../_virtual/_rollupPluginBabelHelpers.js */ "./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js");
+
+
+function disposables() {
+  var disposables = [];
+  var api = {
+    requestAnimationFrame: function (_requestAnimationFrame) {
+      function requestAnimationFrame() {
+        return _requestAnimationFrame.apply(this, arguments);
+      }
+
+      requestAnimationFrame.toString = function () {
+        return _requestAnimationFrame.toString();
+      };
+
+      return requestAnimationFrame;
+    }(function () {
+      var raf = requestAnimationFrame.apply(void 0, arguments);
+      api.add(function () {
+        return cancelAnimationFrame(raf);
+      });
+    }),
+    nextFrame: function nextFrame() {
+      for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+        args[_key] = arguments[_key];
+      }
+
+      api.requestAnimationFrame(function () {
+        api.requestAnimationFrame.apply(api, args);
+      });
+    },
+    setTimeout: function (_setTimeout) {
+      function setTimeout() {
+        return _setTimeout.apply(this, arguments);
+      }
+
+      setTimeout.toString = function () {
+        return _setTimeout.toString();
+      };
+
+      return setTimeout;
+    }(function () {
+      var timer = setTimeout.apply(void 0, arguments);
+      api.add(function () {
+        return clearTimeout(timer);
+      });
+    }),
+    add: function add(cb) {
+      disposables.push(cb);
+    },
+    dispose: function dispose() {
+      for (var _iterator = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_0__.createForOfIteratorHelperLoose)(disposables.splice(0)), _step; !(_step = _iterator()).done;) {
+        var dispose = _step.value;
+        dispose();
+      }
+    }
+  };
+  return api;
+}
+
+
+//# sourceMappingURL=disposables.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/utils/focus-management.esm.js":
+/*!***************************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/utils/focus-management.esm.js ***!
+  \***************************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Focus": () => (/* binding */ Focus),
+/* harmony export */   "FocusResult": () => (/* binding */ FocusResult),
+/* harmony export */   "FocusableMode": () => (/* binding */ FocusableMode),
+/* harmony export */   "focusElement": () => (/* binding */ focusElement),
+/* harmony export */   "focusIn": () => (/* binding */ focusIn),
+/* harmony export */   "getFocusableElements": () => (/* binding */ getFocusableElements),
+/* harmony export */   "isFocusableElement": () => (/* binding */ isFocusableElement)
+/* harmony export */ });
+/* harmony import */ var _match_esm_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./match.esm.js */ "./node_modules/@headlessui/react/dist/utils/match.esm.js");
+
+
+//  - https://stackoverflow.com/a/30753870
+
+var focusableSelector = /*#__PURE__*/['[contentEditable=true]', '[tabindex]', 'a[href]', 'area[href]', 'button:not([disabled])', 'iframe', 'input:not([disabled])', 'select:not([disabled])', 'textarea:not([disabled])'].map( false ? // TODO: Remove this once JSDOM fixes the issue where an element that is
+// "hidden" can be the document.activeElement, because this is not possible
+// in real browsers.
+// TODO: Remove this once JSDOM fixes the issue where an element that is
+0 : function (selector) {
+  return selector + ":not([tabindex='-1'])";
+}).join(',');
+var Focus;
+
+(function (Focus) {
+  /** Focus the first non-disabled element */
+  Focus[Focus["First"] = 1] = "First";
+  /** Focus the previous non-disabled element */
+
+  Focus[Focus["Previous"] = 2] = "Previous";
+  /** Focus the next non-disabled element */
+
+  Focus[Focus["Next"] = 4] = "Next";
+  /** Focus the last non-disabled element */
+
+  Focus[Focus["Last"] = 8] = "Last";
+  /** Wrap tab around */
+
+  Focus[Focus["WrapAround"] = 16] = "WrapAround";
+  /** Prevent scrolling the focusable elements into view */
+
+  Focus[Focus["NoScroll"] = 32] = "NoScroll";
+})(Focus || (Focus = {}));
+
+var FocusResult;
+
+(function (FocusResult) {
+  /** Something went wrong while trying to focus. */
+  FocusResult[FocusResult["Error"] = 0] = "Error";
+  /** When `Focus.WrapAround` is enabled, going from position `N` to `N+1` where `N` is the last index in the array, then we overflow. */
+
+  FocusResult[FocusResult["Overflow"] = 1] = "Overflow";
+  /** Focus was successful. */
+
+  FocusResult[FocusResult["Success"] = 2] = "Success";
+  /** When `Focus.WrapAround` is enabled, going from position `N` to `N-1` where `N` is the first index in the array, then we underflow. */
+
+  FocusResult[FocusResult["Underflow"] = 3] = "Underflow";
+})(FocusResult || (FocusResult = {}));
+
+var Direction;
+
+(function (Direction) {
+  Direction[Direction["Previous"] = -1] = "Previous";
+  Direction[Direction["Next"] = 1] = "Next";
+})(Direction || (Direction = {}));
+
+function getFocusableElements(container) {
+  if (container === void 0) {
+    container = document.body;
+  }
+
+  if (container == null) return [];
+  return Array.from(container.querySelectorAll(focusableSelector));
+}
+var FocusableMode;
+
+(function (FocusableMode) {
+  /** The element itself must be focusable. */
+  FocusableMode[FocusableMode["Strict"] = 0] = "Strict";
+  /** The element should be inside of a focusable element. */
+
+  FocusableMode[FocusableMode["Loose"] = 1] = "Loose";
+})(FocusableMode || (FocusableMode = {}));
+
+function isFocusableElement(element, mode) {
+  var _match;
+
+  if (mode === void 0) {
+    mode = FocusableMode.Strict;
+  }
+
+  if (element === document.body) return false;
+  return (0,_match_esm_js__WEBPACK_IMPORTED_MODULE_0__.match)(mode, (_match = {}, _match[FocusableMode.Strict] = function () {
+    return element.matches(focusableSelector);
+  }, _match[FocusableMode.Loose] = function () {
+    var next = element;
+
+    while (next !== null) {
+      if (next.matches(focusableSelector)) return true;
+      next = next.parentElement;
+    }
+
+    return false;
+  }, _match));
+}
+function focusElement(element) {
+  element == null ? void 0 : element.focus({
+    preventScroll: true
+  });
+}
+function focusIn(container, focus) {
+  var elements = Array.isArray(container) ? container : getFocusableElements(container);
+  var active = document.activeElement;
+
+  var direction = function () {
+    if (focus & (Focus.First | Focus.Next)) return Direction.Next;
+    if (focus & (Focus.Previous | Focus.Last)) return Direction.Previous;
+    throw new Error('Missing Focus.First, Focus.Previous, Focus.Next or Focus.Last');
+  }();
+
+  var startIndex = function () {
+    if (focus & Focus.First) return 0;
+    if (focus & Focus.Previous) return Math.max(0, elements.indexOf(active)) - 1;
+    if (focus & Focus.Next) return Math.max(0, elements.indexOf(active)) + 1;
+    if (focus & Focus.Last) return elements.length - 1;
+    throw new Error('Missing Focus.First, Focus.Previous, Focus.Next or Focus.Last');
+  }();
+
+  var focusOptions = focus & Focus.NoScroll ? {
+    preventScroll: true
+  } : {};
+  var offset = 0;
+  var total = elements.length;
+  var next = undefined;
+
+  do {
+    var _next;
+
+    // Guard against infinite loops
+    if (offset >= total || offset + total <= 0) return FocusResult.Error;
+    var nextIdx = startIndex + offset;
+
+    if (focus & Focus.WrapAround) {
+      nextIdx = (nextIdx + total) % total;
+    } else {
+      if (nextIdx < 0) return FocusResult.Underflow;
+      if (nextIdx >= total) return FocusResult.Overflow;
+    }
+
+    next = elements[nextIdx]; // Try the focus the next element, might not work if it is "hidden" to the user.
+
+    (_next = next) == null ? void 0 : _next.focus(focusOptions); // Try the next one in line
+
+    offset += direction;
+  } while (next !== document.activeElement); // This is a little weird, but let me try and explain: There are a few scenario's
+  // in chrome for example where a focused `<a>` tag does not get the default focus
+  // styles and sometimes they do. This highly depends on whether you started by
+  // clicking or by using your keyboard. When you programmatically add focus `anchor.focus()`
+  // then the active element (document.activeElement) is this anchor, which is expected.
+  // However in that case the default focus styles are not applied *unless* you
+  // also add this tabindex.
+
+
+  if (!next.hasAttribute('tabindex')) next.setAttribute('tabindex', '0');
+  return FocusResult.Success;
+}
+
+
+//# sourceMappingURL=focus-management.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/utils/match.esm.js":
+/*!****************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/utils/match.esm.js ***!
+  \****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "match": () => (/* binding */ match)
+/* harmony export */ });
+function match(value, lookup) {
+  if (value in lookup) {
+    var returnValue = lookup[value];
+
+    for (var _len = arguments.length, args = new Array(_len > 2 ? _len - 2 : 0), _key = 2; _key < _len; _key++) {
+      args[_key - 2] = arguments[_key];
+    }
+
+    return typeof returnValue === 'function' ? returnValue.apply(void 0, args) : returnValue;
+  }
+
+  var error = new Error("Tried to handle \"" + value + "\" but there is no handler defined. Only defined handlers are: " + Object.keys(lookup).map(function (key) {
+    return "\"" + key + "\"";
+  }).join(', ') + ".");
+  if (Error.captureStackTrace) Error.captureStackTrace(error, match);
+  throw error;
+}
+
+
+//# sourceMappingURL=match.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/utils/once.esm.js":
+/*!***************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/utils/once.esm.js ***!
+  \***************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "once": () => (/* binding */ once)
+/* harmony export */ });
+function once(cb) {
+  var state = {
+    called: false
+  };
+  return function () {
+    if (state.called) return;
+    state.called = true;
+    return cb.apply(void 0, arguments);
+  };
+}
+
+
+//# sourceMappingURL=once.esm.js.map
+
+
+/***/ }),
+
+/***/ "./node_modules/@headlessui/react/dist/utils/render.esm.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/@headlessui/react/dist/utils/render.esm.js ***!
+  \*****************************************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Features": () => (/* binding */ Features),
+/* harmony export */   "RenderStrategy": () => (/* binding */ RenderStrategy),
+/* harmony export */   "forwardRefWithAs": () => (/* binding */ forwardRefWithAs),
+/* harmony export */   "render": () => (/* binding */ render)
+/* harmony export */ });
+/* harmony import */ var _virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../_virtual/_rollupPluginBabelHelpers.js */ "./node_modules/@headlessui/react/dist/_virtual/_rollupPluginBabelHelpers.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var _match_esm_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./match.esm.js */ "./node_modules/@headlessui/react/dist/utils/match.esm.js");
+
+
+
+
+var Features;
+
+(function (Features) {
+  /** No features at all */
+  Features[Features["None"] = 0] = "None";
+  /**
+   * When used, this will allow us to use one of the render strategies.
+   *
+   * **The render strategies are:**
+   *    - **Unmount**   _(Will unmount the component.)_
+   *    - **Hidden**    _(Will hide the component using the [hidden] attribute.)_
+   */
+
+  Features[Features["RenderStrategy"] = 1] = "RenderStrategy";
+  /**
+   * When used, this will allow the user of our component to be in control. This can be used when
+   * you want to transition based on some state.
+   */
+
+  Features[Features["Static"] = 2] = "Static";
+})(Features || (Features = {}));
+
+var RenderStrategy;
+
+(function (RenderStrategy) {
+  RenderStrategy[RenderStrategy["Unmount"] = 0] = "Unmount";
+  RenderStrategy[RenderStrategy["Hidden"] = 1] = "Hidden";
+})(RenderStrategy || (RenderStrategy = {}));
+
+function render(_ref) {
+  var props = _ref.props,
+      slot = _ref.slot,
+      defaultTag = _ref.defaultTag,
+      features = _ref.features,
+      _ref$visible = _ref.visible,
+      visible = _ref$visible === void 0 ? true : _ref$visible,
+      name = _ref.name;
+  // Visible always render
+  if (visible) return _render(props, slot, defaultTag, name);
+  var featureFlags = features != null ? features : Features.None;
+
+  if (featureFlags & Features.Static) {
+    var _props$static = props["static"],
+        isStatic = _props$static === void 0 ? false : _props$static,
+        rest = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.objectWithoutPropertiesLoose)(props, ["static"]); // When the `static` prop is passed as `true`, then the user is in control, thus we don't care about anything else
+
+
+    if (isStatic) return _render(rest, slot, defaultTag, name);
+  }
+
+  if (featureFlags & Features.RenderStrategy) {
+    var _match;
+
+    var _props$unmount = props.unmount,
+        unmount = _props$unmount === void 0 ? true : _props$unmount,
+        _rest = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.objectWithoutPropertiesLoose)(props, ["unmount"]);
+
+    var strategy = unmount ? RenderStrategy.Unmount : RenderStrategy.Hidden;
+    return (0,_match_esm_js__WEBPACK_IMPORTED_MODULE_2__.match)(strategy, (_match = {}, _match[RenderStrategy.Unmount] = function () {
+      return null;
+    }, _match[RenderStrategy.Hidden] = function () {
+      return _render((0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__["extends"])({}, _rest, {
+        hidden: true,
+        style: {
+          display: 'none'
+        }
+      }), slot, defaultTag, name);
+    }, _match));
+  } // No features enabled, just render
+
+
+  return _render(props, slot, defaultTag, name);
+}
+
+function _render(props, slot, tag, name) {
+  var _ref2;
+
+  if (slot === void 0) {
+    slot = {};
+  }
+
+  var _omit = omit(props, ['unmount', 'static']),
+      _omit$as = _omit.as,
+      Component = _omit$as === void 0 ? tag : _omit$as,
+      children = _omit.children,
+      _omit$refName = _omit.refName,
+      refName = _omit$refName === void 0 ? 'ref' : _omit$refName,
+      passThroughProps = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.objectWithoutPropertiesLoose)(_omit, ["as", "children", "refName"]); // This allows us to use `<HeadlessUIComponent as={MyComponent} refName="innerRef" />`
+
+
+  var refRelatedProps = props.ref !== undefined ? (_ref2 = {}, _ref2[refName] = props.ref, _ref2) : {};
+  var resolvedChildren = typeof children === 'function' ? children(slot) : children; // Allow for className to be a function with the slot as the contents
+
+  if (passThroughProps.className && typeof passThroughProps.className === 'function') {
+    passThroughProps.className = passThroughProps.className(slot);
+  }
+
+  if (Component === react__WEBPACK_IMPORTED_MODULE_0__.Fragment) {
+    if (Object.keys(passThroughProps).length > 0) {
+      if (!(0,react__WEBPACK_IMPORTED_MODULE_0__.isValidElement)(resolvedChildren) || Array.isArray(resolvedChildren) && resolvedChildren.length > 1) {
+        throw new Error(['Passing props on "Fragment"!', '', "The current component <" + name + " /> is rendering a \"Fragment\".", "However we need to passthrough the following props:", Object.keys(passThroughProps).map(function (line) {
+          return "  - " + line;
+        }).join('\n'), '', 'You can apply a few solutions:', ['Add an `as="..."` prop, to ensure that we render an actual element instead of a "Fragment".', 'Render a single element as the child so that we can forward the props onto that element.'].map(function (line) {
+          return "  - " + line;
+        }).join('\n')].join('\n'));
+      }
+
+      return (0,react__WEBPACK_IMPORTED_MODULE_0__.cloneElement)(resolvedChildren, Object.assign({}, // Filter out undefined values so that they don't override the existing values
+      mergeEventFunctions(compact(omit(passThroughProps, ['ref'])), resolvedChildren.props, ['onClick']), refRelatedProps));
+    }
+  }
+
+  return (0,react__WEBPACK_IMPORTED_MODULE_0__.createElement)(Component, Object.assign({}, omit(passThroughProps, ['ref']), Component !== react__WEBPACK_IMPORTED_MODULE_0__.Fragment && refRelatedProps), resolvedChildren);
+}
+/**
+ * We can use this function for the following useCase:
+ *
+ * <Menu.Item> <button onClick={console.log} /> </Menu.Item>
+ *
+ * Our `Menu.Item` will have an internal `onClick`, if you passthrough an `onClick` to the actual
+ * `Menu.Item` component we will call it correctly. However, when we have an `onClick` on the actual
+ * first child, that one should _also_ be called (but before this implementation, it was just
+ * overriding the `onClick`). But it is only when we *render* that we have access to the existing
+ * props of this component.
+ *
+ * It's a bit hacky, and not that clean, but it is something internal and we have tests to rely on
+ * so that we can refactor this later (if needed).
+ */
+
+
+function mergeEventFunctions(passThroughProps, existingProps, functionsToMerge) {
+  var clone = Object.assign({}, passThroughProps);
+
+  var _loop = function _loop() {
+    var func = _step.value;
+
+    if (passThroughProps[func] !== undefined && existingProps[func] !== undefined) {
+      var _Object$assign;
+
+      Object.assign(clone, (_Object$assign = {}, _Object$assign[func] = function (event) {
+        // Props we control
+        if (!event.defaultPrevented) passThroughProps[func](event); // Existing props on the component
+
+        if (!event.defaultPrevented) existingProps[func](event);
+      }, _Object$assign));
+    }
+  };
+
+  for (var _iterator = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.createForOfIteratorHelperLoose)(functionsToMerge), _step; !(_step = _iterator()).done;) {
+    _loop();
+  }
+
+  return clone;
+}
+/**
+ * This is a hack, but basically we want to keep the full 'API' of the component, but we do want to
+ * wrap it in a forwardRef so that we _can_ passthrough the ref
+ */
+
+
+function forwardRefWithAs(component) {
+  var _component$displayNam;
+
+  return Object.assign((0,react__WEBPACK_IMPORTED_MODULE_0__.forwardRef)(component), {
+    displayName: (_component$displayNam = component.displayName) != null ? _component$displayNam : component.name
+  });
+}
+
+function compact(object) {
+  var clone = Object.assign({}, object);
+
+  for (var key in clone) {
+    if (clone[key] === undefined) delete clone[key];
+  }
+
+  return clone;
+}
+
+function omit(object, keysToOmit) {
+  if (keysToOmit === void 0) {
+    keysToOmit = [];
+  }
+
+  var clone = Object.assign({}, object);
+
+  for (var _iterator2 = (0,_virtual_rollupPluginBabelHelpers_js__WEBPACK_IMPORTED_MODULE_1__.createForOfIteratorHelperLoose)(keysToOmit), _step2; !(_step2 = _iterator2()).done;) {
+    var key = _step2.value;
+    if (key in clone) delete clone[key];
+  }
+
+  return clone;
+}
+
+
+//# sourceMappingURL=render.esm.js.map
+
+
+/***/ }),
+
 /***/ "./node_modules/axios/index.js":
 /*!*************************************!*\
   !*** ./node_modules/axios/index.js ***!
@@ -2232,38 +4696,48 @@ var loginUser = function loginUser(user) {
               dispatch({
                 type: _constants_AuthConstants__WEBPACK_IMPORTED_MODULE_1__.USER_LOGIN_REQUEST
               });
-              _context.next = 4;
+              dispatch({
+                type: _constants_AuthConstants__WEBPACK_IMPORTED_MODULE_1__.TIME_RESET
+              });
+              _context.next = 5;
               return axios__WEBPACK_IMPORTED_MODULE_2___default().post("/login", user);
 
-            case 4:
+            case 5:
               _yield$axios$post = _context.sent;
               data = _yield$axios$post.data;
-              _context.next = 8;
+              dispatch({
+                type: _constants_AuthConstants__WEBPACK_IMPORTED_MODULE_1__.TIME_SUCCESS,
+                payload: {
+                  tst: data.tst,
+                  overtime: data.overtime
+                }
+              });
+              _context.next = 10;
               return axios__WEBPACK_IMPORTED_MODULE_2___default().get("/auth/profile");
 
-            case 8:
+            case 10:
               loggedUser = _context.sent;
               dispatch({
                 type: _constants_AuthConstants__WEBPACK_IMPORTED_MODULE_1__.USER_LOGIN_SUCCESS,
                 payload: loggedUser.data
               });
-              _context.next = 15;
+              _context.next = 17;
               break;
 
-            case 12:
-              _context.prev = 12;
+            case 14:
+              _context.prev = 14;
               _context.t0 = _context["catch"](0);
               dispatch({
                 type: _constants_AuthConstants__WEBPACK_IMPORTED_MODULE_1__.USER_LOGIN_FAIL,
                 error: _context.t0
               });
 
-            case 15:
+            case 17:
             case "end":
               return _context.stop();
           }
         }
-      }, _callee, null, [[0, 12]]);
+      }, _callee, null, [[0, 14]]);
     }));
 
     return function (_x) {
@@ -2344,8 +4818,18 @@ var refreshUser = function refreshUser() {
         while (1) {
           switch (_context3.prev = _context3.next) {
             case 0:
+              dispatch({
+                type: _constants_AuthConstants__WEBPACK_IMPORTED_MODULE_1__.TIME_RESET
+              });
               axios__WEBPACK_IMPORTED_MODULE_2___default().get("/auth/refresh-token").then(function (res) {
                 if (res.status == 200) {
+                  dispatch({
+                    type: _constants_AuthConstants__WEBPACK_IMPORTED_MODULE_1__.TIME_SUCCESS,
+                    payload: {
+                      tst: res.data.tst,
+                      overtime: res.data.overtime
+                    }
+                  });
                   axios__WEBPACK_IMPORTED_MODULE_2___default().get("/auth/profile").then(function (response) {
                     dispatch({
                       type: _constants_AuthConstants__WEBPACK_IMPORTED_MODULE_1__.USER_LOGIN_SUCCESS,
@@ -2360,7 +4844,7 @@ var refreshUser = function refreshUser() {
                 });
               });
 
-            case 1:
+            case 2:
             case "end":
               return _context3.stop();
           }
@@ -2513,6 +4997,33 @@ var Footer = function Footer() {
 
 /***/ }),
 
+/***/ "./resources/js/components/Loader.js":
+/*!*******************************************!*\
+  !*** ./resources/js/components/Loader.js ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! lodash */ "./node_modules/lodash/lodash.js");
+/* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
+
+
+
+var Loader = function Loader() {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_2__.jsx)("div", {});
+};
+
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (Loader);
+
+/***/ }),
+
 /***/ "./resources/js/components/Navbar.js":
 /*!*******************************************!*\
   !*** ./resources/js/components/Navbar.js ***!
@@ -2527,8 +5038,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react_router_dom__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/esm/react-router-dom.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
+/* harmony import */ var _headlessui_react__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @headlessui/react */ "./node_modules/@headlessui/react/dist/components/transitions/transition.esm.js");
+/* harmony import */ var _headlessui_react__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @headlessui/react */ "./node_modules/@headlessui/react/dist/components/dialog/dialog.esm.js");
 /* harmony import */ var _actions_AuthActions__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../actions/AuthActions */ "./resources/js/actions/AuthActions.js");
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+function _slicedToArray(arr, i) { return _arrayWithHoles(arr) || _iterableToArrayLimit(arr, i) || _unsupportedIterableToArray(arr, i) || _nonIterableRest(); }
+
+function _nonIterableRest() { throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method."); }
+
+function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
+
+function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
+
+function _iterableToArrayLimit(arr, i) { var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"]; if (_i == null) return; var _arr = []; var _n = true; var _d = false; var _s, _e; try { for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) { _arr.push(_s.value); if (i && _arr.length === i) break; } } catch (err) { _d = true; _e = err; } finally { try { if (!_n && _i["return"] != null) _i["return"](); } finally { if (_d) throw _e; } } return _arr; }
+
+function _arrayWithHoles(arr) { if (Array.isArray(arr)) return arr; }
+
+
 
 
 
@@ -2539,28 +5065,100 @@ __webpack_require__.r(__webpack_exports__);
 
 var Navbar = function Navbar() {
   var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)();
+
+  var _useState = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(0),
+      _useState2 = _slicedToArray(_useState, 2),
+      sessionTimer = _useState2[0],
+      setTimer = _useState2[1];
+
+  var _useState3 = (0,react__WEBPACK_IMPORTED_MODULE_0__.useState)(false),
+      _useState4 = _slicedToArray(_useState3, 2),
+      isOpen = _useState4[0],
+      setIsOpen = _useState4[1];
+
   var authUser = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)(function (state) {
     return state.authUser;
   });
   var auth = authUser.auth,
       loggedInUser = authUser.loggedInUser,
       loading = authUser.loading;
+  var userTime = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useSelector)(function (state) {
+    return state.userTime;
+  });
 
   var logout = function logout(e) {
     e.preventDefault();
     dispatch((0,_actions_AuthActions__WEBPACK_IMPORTED_MODULE_2__.logoutUser)());
   };
 
+  var refreshToken = function refreshToken() {
+    closeModal();
+    location.reload();
+    dispatch((0,_actions_AuthActions__WEBPACK_IMPORTED_MODULE_2__.refreshUser)());
+  };
+
+  var closeModal = function closeModal() {
+    setIsOpen(false);
+  };
+
+  var openModal = function openModal() {
+    setIsOpen(true);
+  };
+
+  var checkAuth = function checkAuth(rem) {
+    if (rem < 0) {
+      closeModal();
+      location.reload();
+      return 0;
+    }
+
+    if (!(rem <= 20)) {
+      return rem;
+    } else {
+      setIsOpen(true);
+      return rem;
+    }
+  };
+
+  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
+    if (auth) {
+      setInterval(function () {
+        var currTime = Math.floor(Date.now() / 1000);
+        var remaining = userTime.overtime * 60 - (currTime - userTime.tst);
+        setTimer(checkAuth(remaining));
+      }, 1000);
+    }
+  }, [auth]);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
     className: "navbar-wrapper ",
     children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
       children: "Laravel React Starter"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("nav", {
-      children: auth ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("nav", {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("ul", {
+        className: "link-list",
+        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+            to: "/",
+            children: " Home "
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+            to: "/contact",
+            children: " Contact "
+          })
+        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
+          children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
+            to: "/about",
+            children: " About"
+          })
+        })]
+      }), auth ? /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("ul", {
-          className: "link-list",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
-            children: loggedInUser.name
+          className: "link-list auth-routes",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("span", {
+            children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("i", {
+              className: "ti-settings"
+            }), " ", loggedInUser.name]
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
               onClick: logout,
@@ -2568,27 +5166,9 @@ var Navbar = function Navbar() {
             })
           })]
         })
-      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
-        children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("ul", {
-          className: "link-list",
-          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-              to: "/",
-              children: " Home "
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-              to: "/contact",
-              children: " Contact "
-            })
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
-            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
-              to: "/about",
-              children: " About"
-            })
-          })]
-        }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("ul", {
-          className: "link-list auth-routes",
+      }) : /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.Fragment, {
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("ul", {
+          className: "link-list guest-routes",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
             children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
               to: "/login",
@@ -2600,7 +5180,72 @@ var Navbar = function Navbar() {
               children: " Register"
             })
           })]
-        })]
+        })
+      })]
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_5__.Transition, {
+      show: isOpen,
+      as: react__WEBPACK_IMPORTED_MODULE_0__.Fragment,
+      children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_6__.Dialog, {
+        as: "div",
+        className: "fixed inset-0 z-10 overflow-y-auto",
+        onClose: closeModal,
+        children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+          className: "min-h-screen px-4 text-center",
+          children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_5__.Transition.Child, {
+            as: react__WEBPACK_IMPORTED_MODULE_0__.Fragment,
+            enter: "ease-out duration-300",
+            enterFrom: "opacity-0",
+            enterTo: "opacity-100",
+            leave: "ease-in duration-200",
+            leaveFrom: "opacity-100",
+            leaveTo: "opacity-0",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_6__.Dialog.Overlay, {
+              className: "fixed inset-0 bg-black opacity-30"
+            })
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
+            className: "inline-block h-screen align-middle",
+            "aria-hidden": "true",
+            children: "\u200B"
+          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_5__.Transition.Child, {
+            as: react__WEBPACK_IMPORTED_MODULE_0__.Fragment,
+            enter: "ease-out duration-300",
+            enterFrom: "opacity-0 scale-95",
+            enterTo: "opacity-100 scale-100",
+            leave: "ease-in duration-200",
+            leaveFrom: "opacity-100 scale-100",
+            leaveTo: "opacity-0 scale-95",
+            children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+              className: "inline-block  max-w-md p-6 my-8 overflow-hidden text-left align-middle transition-all transform bg-white shadow-xl",
+              children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_headlessui_react__WEBPACK_IMPORTED_MODULE_6__.Dialog.Title, {
+                as: "h3",
+                className: "text-lg font-bold leading-6 text-green-900",
+                children: "You Are About To Be Logged Out!"
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
+                className: "mt-3",
+                children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("p", {
+                  className: "text-sm",
+                  children: ["You have ", sessionTimer, " seconds to refresh your session!"]
+                })
+              }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
+                className: "mt-4",
+                children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+                  type: "button",
+                  className: "inline-flex justify-center px-8 py-2 text-sm font-medium text-white bg-green-600 border border-transparent hover:bg-green-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-green-500",
+                  onClick: function onClick(e) {
+                    e.preventDefault();
+                    refreshToken();
+                  },
+                  children: "Refresh"
+                }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("button", {
+                  type: "button",
+                  className: "inline-flex justify-center px-8  py-2 ml-5 text-sm font-medium text-white bg-red-600 border border-transparent  hover:bg-red-300 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-red-500",
+                  onClick: closeModal,
+                  children: "Close"
+                })]
+              })]
+            })
+          })]
+        })
       })
     })]
   });
@@ -2653,7 +5298,6 @@ var ProtectedRoute = function ProtectedRoute(_ref) {
   });
   var loggedInUser = authUser.loggedInUser,
       auth = authUser.auth;
-  var dispatch = (0,react_redux__WEBPACK_IMPORTED_MODULE_1__.useDispatch)();
   var location = (0,react_router_dom__WEBPACK_IMPORTED_MODULE_4__.useLocation)();
 
   var isAllowed = function isAllowed() {
@@ -2664,12 +5308,9 @@ var ProtectedRoute = function ProtectedRoute(_ref) {
     return false;
   };
 
-  (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
-    dispatch((0,_actions_AuthActions__WEBPACK_IMPORTED_MODULE_2__.refreshUser)());
-  }, []);
   return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Route, _objectSpread(_objectSpread({}, rest), {}, {
     render: function render(props) {
-      if (isAllowed) {
+      if (isAllowed()) {
         return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(Component, _objectSpread({}, props));
       }
 
@@ -2769,7 +5410,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "USER_REGISTER_SUCCESS": () => (/* binding */ USER_REGISTER_SUCCESS),
 /* harmony export */   "USER_REGISTER_FAIL": () => (/* binding */ USER_REGISTER_FAIL),
 /* harmony export */   "USER_REFRESH": () => (/* binding */ USER_REFRESH),
-/* harmony export */   "USER_LOGOUT": () => (/* binding */ USER_LOGOUT)
+/* harmony export */   "USER_LOGOUT": () => (/* binding */ USER_LOGOUT),
+/* harmony export */   "TIME_RESET": () => (/* binding */ TIME_RESET),
+/* harmony export */   "TIME_SUCCESS": () => (/* binding */ TIME_SUCCESS)
 /* harmony export */ });
 var USER_LOGIN_REQUEST = "USER_LOGIN_REQUEST";
 var USER_LOGIN_SUCCESS = "USER_LOGIN_SUCCESS";
@@ -2779,6 +5422,8 @@ var USER_REGISTER_SUCCESS = "USER_REGISTER_SUCCESS";
 var USER_REGISTER_FAIL = "USER_REGISTER_FAIL";
 var USER_REFRESH = "USER_REFRESH";
 var USER_LOGOUT = "USER_LOGOUT";
+var TIME_RESET = 'TIME_RESET';
+var TIME_SUCCESS = 'TIME_SUCCESS';
 
 /***/ }),
 
@@ -2884,13 +5529,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
-/* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js");
+/* harmony import */ var react_router__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! react-router */ "./node_modules/react-router/esm/react-router.js");
 /* harmony import */ var formik__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! formik */ "./node_modules/formik/dist/formik.esm.js");
 /* harmony import */ var react_redux__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! react-redux */ "./node_modules/react-redux/es/index.js");
 /* harmony import */ var yup__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! yup */ "./node_modules/yup/es/index.js");
 /* harmony import */ var _components_form_elements_InputField__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../components/form-elements/InputField */ "./resources/js/components/form-elements/InputField.js");
 /* harmony import */ var _actions_AuthActions__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../actions/AuthActions */ "./resources/js/actions/AuthActions.js");
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+/* harmony import */ var _components_Loader__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../components/Loader */ "./resources/js/components/Loader.js");
+/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
+
 
 
 
@@ -2902,7 +5549,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var Login = function Login() {
-  var hist = (0,react_router__WEBPACK_IMPORTED_MODULE_7__.useHistory)();
+  var hist = (0,react_router__WEBPACK_IMPORTED_MODULE_8__.useHistory)();
   var authUser = (0,react_redux__WEBPACK_IMPORTED_MODULE_2__.useSelector)(function (state) {
     return state.authUser;
   });
@@ -2940,14 +5587,14 @@ var Login = function Login() {
   (0,react__WEBPACK_IMPORTED_MODULE_0__.useEffect)(function () {
     dispatch((0,_actions_AuthActions__WEBPACK_IMPORTED_MODULE_5__.refreshUser)());
   }, []);
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("div", {
+  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("div", {
     className: "login-page",
-    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("h1", {
+    children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("h1", {
       children: "Login"
-    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)("form", {
+    }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsxs)("form", {
       action: "",
       onSubmit: formik.handleSubmit,
-      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_form_elements_InputField__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_form_elements_InputField__WEBPACK_IMPORTED_MODULE_4__["default"], {
         labelText: "Email",
         type: "email",
         name: "email",
@@ -2959,7 +5606,7 @@ var Login = function Login() {
         value: formik.values.email,
         onChange: formik.handleChange,
         errors: formik.errors.email && formik.touched.email && formik.errors.email
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_form_elements_InputField__WEBPACK_IMPORTED_MODULE_4__["default"], {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)(_components_form_elements_InputField__WEBPACK_IMPORTED_MODULE_4__["default"], {
         labelText: "Password",
         type: "password",
         name: "password",
@@ -2971,7 +5618,7 @@ var Login = function Login() {
         value: formik.values.password,
         onChange: formik.handleChange,
         errors: formik.errors.password && formik.touched.password && formik.errors.password
-      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)("button", {
+      }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_7__.jsx)("button", {
         type: "submit",
         children: "Login"
       })]
@@ -3198,7 +5845,8 @@ function Dashboard() {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "LoginReducer": () => (/* binding */ LoginReducer)
+/* harmony export */   "LoginReducer": () => (/* binding */ LoginReducer),
+/* harmony export */   "AuthSessionReducer": () => (/* binding */ AuthSessionReducer)
 /* harmony export */ });
 /* harmony import */ var _constants_AuthConstants__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../constants/AuthConstants */ "./resources/js/constants/AuthConstants.js");
 
@@ -3242,6 +5890,30 @@ var LoginReducer = function LoginReducer() {
       return state;
   }
 };
+var AuthSessionReducer = function AuthSessionReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {
+    tst: 0,
+    overtime: 0
+  };
+  var action = arguments.length > 1 ? arguments[1] : undefined;
+
+  switch (action.type) {
+    case _constants_AuthConstants__WEBPACK_IMPORTED_MODULE_0__.TIME_RESET:
+      return {
+        tst: 0,
+        overtime: 0
+      };
+
+    case _constants_AuthConstants__WEBPACK_IMPORTED_MODULE_0__.TIME_SUCCESS:
+      return {
+        tst: action.payload.tst,
+        overtime: action.payload.overtime
+      };
+
+    default:
+      return state;
+  }
+};
 
 /***/ }),
 
@@ -3265,7 +5937,8 @@ __webpack_require__.r(__webpack_exports__);
 
 
 var reducer = (0,redux__WEBPACK_IMPORTED_MODULE_3__.combineReducers)({
-  authUser: _reducers_AuthReducer__WEBPACK_IMPORTED_MODULE_2__.LoginReducer
+  authUser: _reducers_AuthReducer__WEBPACK_IMPORTED_MODULE_2__.LoginReducer,
+  userTime: _reducers_AuthReducer__WEBPACK_IMPORTED_MODULE_2__.AuthSessionReducer
 });
 var initialState = {};
 var middleware = [redux_thunk__WEBPACK_IMPORTED_MODULE_0__["default"]];

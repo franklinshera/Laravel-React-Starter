@@ -4,11 +4,13 @@ import { composeWithDevTools } from "redux-devtools-extension";
 
 
 import {
-    LoginReducer
+    LoginReducer,
+    AuthSessionReducer
 } from "./reducers/AuthReducer";
 
 const reducer = combineReducers({
     authUser: LoginReducer,
+    userTime: AuthSessionReducer
 });
 
 const initialState = {};

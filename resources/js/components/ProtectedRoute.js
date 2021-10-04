@@ -6,7 +6,6 @@ import { refreshUser } from "../actions/AuthActions";
 const ProtectedRoute = ({  component: Component, ...rest }) => {
     const authUser = useSelector((state) => state.authUser);
     const { loggedInUser, auth } = authUser;
-    const dispatch =  useDispatch()
 
     let location = useLocation();
 
@@ -22,9 +21,7 @@ const ProtectedRoute = ({  component: Component, ...rest }) => {
     };
 
 
-    useEffect(() => {
-        dispatch(refreshUser())
-    }, [])
+    
 
 
 
@@ -34,7 +31,7 @@ const ProtectedRoute = ({  component: Component, ...rest }) => {
 
             render={(props) => {
 
-                if (isAllowed) {
+                if (isAllowed()) {
                     return <Component {...props} />;
                 }
 

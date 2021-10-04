@@ -8,6 +8,7 @@ import InputField from "../components/form-elements/InputField";
 
 
 import { loginUser , refreshUser } from '../actions/AuthActions'
+import Loader from "../components/Loader";
 
 const Login = () => {
 
@@ -69,6 +70,8 @@ const Login = () => {
     return (
         <div className="login-page">
             <h1>Login</h1>
+           
+           
             <form action="" onSubmit={formik.handleSubmit}>
                 <InputField
                     labelText="Email"
